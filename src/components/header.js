@@ -1,8 +1,13 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import SearchIcon from '@material-ui/icons/Search'
+import InputBase from '@material-ui/core/InputBase'
+import { Typography } from '@material-ui/core';
 
-const Header = ({ siteTitle }) => (
+const oldHeader = ({ siteTitle }) => (
   <div
     style={{
       background: `#f6755e`,
@@ -29,6 +34,21 @@ const Header = ({ siteTitle }) => (
       </h1>
     </div>
   </div>
+)
+
+const Header = ({siteTitle}) => (
+    <div>
+        <AppBar position="static">
+            <Toolbar>
+                <div>
+                    <SearchIcon />
+                </div>
+                <InputBase
+                    placeholder="Search..."
+                />
+            </Toolbar>
+        </AppBar>
+    </div>
 )
 
 Header.propTypes = {
