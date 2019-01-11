@@ -5,6 +5,13 @@ import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
 import Button from '@material-ui/core/Button'
+import ItemList from '../components/itemList'
+
+const items = [
+    { name: "name1"},
+    { name: "name2"},
+    { name: "name3"}
+]
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +25,7 @@ const IndexPage = () => (
     <Button variant='contained' color="primary">
         Hello Button
     </Button>
+    <ItemList items={items}/>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
