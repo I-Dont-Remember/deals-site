@@ -22,6 +22,8 @@ const items = [
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <Button color="primary">Primary</Button>
+    <Button color="secondary">Secondary</Button>
     <LocationList items={items} />
   </Layout>
 )
