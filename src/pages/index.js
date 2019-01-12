@@ -1,15 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Header from "../components/header"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Button from "@material-ui/core/Button"
-import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
 import LocationList from "../components/locationList"
-import { Typography } from "@material-ui/core"
 
 // data from json-generator.com using this template
 // [ 

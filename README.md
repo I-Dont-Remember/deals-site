@@ -8,6 +8,14 @@
   Gatsby's default starter
 </h1>
 
+## Deals Specific Information
+
+Obviously this site is built using Gatsby, a powerful static site generator that lets us easily build a PWA (Progressive Web App) while using React, which has lots of documentation and examples with it's large user-base.  To easily develop for simulated mobile environments, browser dev tools have the option for Responsive/mobile.  To audit it's PWA goodness, they also contain LightHouse (might only be Chrome), which will run a test and provide information about the site.
+
+To get started, clone the repo and run `npm i`.  That should get all the dependencies you need setup & since `gatsby-cli` is a dev-dependency you don't even need the global version.
+
+## Gatsby Default README
+
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
