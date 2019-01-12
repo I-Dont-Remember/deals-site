@@ -1,11 +1,11 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import SearchIcon from '@material-ui/icons/Search'
-import InputBase from '@material-ui/core/InputBase'
-import { Typography } from '@material-ui/core';
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from "@material-ui/core/Toolbar"
+import SearchIcon from "@material-ui/icons/Search"
+import InputBase from "@material-ui/core/InputBase"
+import { Typography } from "@material-ui/core"
 
 const oldHeader = ({ siteTitle }) => (
   <div
@@ -36,19 +36,17 @@ const oldHeader = ({ siteTitle }) => (
   </div>
 )
 
-const Header = ({siteTitle}) => (
-    <div>
-        <AppBar position="static">
-            <Toolbar>
-                <div>
-                    <SearchIcon />
-                </div>
-                <InputBase
-                    placeholder="Search..."
-                />
-            </Toolbar>
-        </AppBar>
-    </div>
+const Header = ({ siteTitle }) => (
+  <div>
+    <AppBar position="static">
+      <Toolbar>
+        <div>
+          <SearchIcon />
+        </div>
+        <InputBase placeholder="Search..." />
+      </Toolbar>
+    </AppBar>
+  </div>
 )
 
 Header.propTypes = {
