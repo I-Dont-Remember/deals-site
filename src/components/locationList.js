@@ -18,7 +18,7 @@ class LocationList extends React.Component {
     return (
       <List>
         {this.props.items.map(i => (
-          <LocationItem key={i.id} id={i.id} name={i.name}/>
+          <LocationItem key={i.id} item={i}/>
         ))}
       </List>
     )

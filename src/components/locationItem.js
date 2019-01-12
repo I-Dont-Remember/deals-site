@@ -20,25 +20,24 @@ class LocationItem extends React.Component {
   }
 
   render() {
+    const item = this.props.item
     return (
       <Card>
         <CardContent>
           <Button onClick={this.handleOpen}>
             <Typography variant="h5" component="h2">
-              {this.props.id} {this.props.name}
+              {item.name}
             </Typography>
           </Button>
           <LocationModal
             handleOpen={this.handleOpen}
             handleClose={this.handleClose}
             open={this.state.open}
-            id={this.props.id}
+            id={item.id}
           />
-            <ul>
-                <li>hi</li>
-                <li>anotha one</li>
-                <li>a third one</li>
-            </ul>
+          <ul>
+            {item.deals.map(d => (<li key={d.id}>{d.description}</li>))}
+          </ul>
         </CardContent>
       </Card>
     )
