@@ -4,17 +4,8 @@ import List from "@material-ui/core/List"
 import Typography from "@material-ui/core/Typography"
 
 class LocationList extends React.Component {
-  state = {
-    isLoading: true,
-  }
-
-  componentDidMount() {
-    // call api here for initial deals
-    setTimeout(() => this.setState({ isLoading: false }), 1000)
-  }
-
   render() {
-    const { isLoading } = this.state
+    const  isLoading = this.props.isLoading
     if (isLoading) {
       return (
         <div>
@@ -27,7 +18,7 @@ class LocationList extends React.Component {
     return (
       <List>
         {this.props.items.map(i => (
-          <LocationItem id={i.id} />
+          <LocationItem key={i.id} id={i.id} name={i.name}/>
         ))}
       </List>
     )

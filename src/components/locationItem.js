@@ -25,7 +25,7 @@ class LocationItem extends React.Component {
         <CardContent>
           <Button onClick={this.handleOpen}>
             <Typography variant="h5" component="h2">
-              {this.props.id} Location Name
+              {this.props.id} {this.props.name}
             </Typography>
           </Button>
           <LocationModal
@@ -34,14 +34,11 @@ class LocationItem extends React.Component {
             open={this.state.open}
             id={this.props.id}
           />
-          <Typography component="p">
             <ul>
-              <li>hi</li>
-              <li>anotha one</li>
-              <li>a third one</li>
+                <li>hi</li>
+                <li>anotha one</li>
+                <li>a third one</li>
             </ul>
-          </Typography>
-          <Button color="secondary">Hello</Button>
         </CardContent>
       </Card>
     )

@@ -36,25 +36,24 @@ const oldHeader = ({ siteTitle }) => (
   </div>
 )
 
-const Header = ({ siteTitle }) => (
+const Header = ({ searchOnChange }) => (
   <div>
     <AppBar position="static">
       <Toolbar>
         <div>
           <SearchIcon />
         </div>
-        <InputBase placeholder="Search..." />
+        <InputBase 
+            placeholder="Search..."
+            onChange={searchOnChange}
+        />
       </Toolbar>
     </AppBar>
   </div>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: PropTypes.func,
 }
 
 export default Header
