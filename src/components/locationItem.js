@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import LocationModal from "../components/locationModal"
 
-class LocationItem extends React.Component {
+class Locationlocation extends React.Component {
   state = {
     open: false,
   }
@@ -18,24 +18,25 @@ class LocationItem extends React.Component {
     this.setState({ open: false })
   }
 
+  // use the slice of deals just to show a limited number so we don't overwhelm the page
   render() {
-    const item = this.props.item
+    const location = this.props.item
     return (
-      <Card>
+      <Card style={{margin: `2px`}}>
         <CardContent>
           <Button onClick={this.handleOpen}>
             <Typography variant="h5" component="h2">
-              {item.name}
+              {location.name}
             </Typography>
           </Button>
           <LocationModal
             handleOpen={this.handleOpen}
             handleClose={this.handleClose}
             open={this.state.open}
-            id={item.id}
+            location={location}
           />
           <ul>
-            {item.deals.map(d => (<li key={d.id}>{d.description}</li>))}
+            {location.deals.slice(0,3).map(d => (<li key={d.id}>{d.description}</li>))}
           </ul>
         </CardContent>
       </Card>
@@ -43,4 +44,4 @@ class LocationItem extends React.Component {
   }
 }
 
-export default LocationItem
+export default Locationlocation
