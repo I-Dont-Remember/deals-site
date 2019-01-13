@@ -41,10 +41,7 @@ const Header = ({ searchOnChange }) => (
         <div>
           <SearchIcon />
         </div>
-        <InputBase 
-            placeholder="Search..."
-            onChange={searchOnChange}
-        />
+        <InputBase placeholder="Search..." onChange={searchOnChange} />
       </Toolbar>
     </AppBar>
   </div>

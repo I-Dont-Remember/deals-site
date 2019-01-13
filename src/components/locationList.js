@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography"
 
 class LocationList extends React.Component {
   render() {
-    const  isLoading = this.props.isLoading
+    const isLoading = this.props.isLoading
     if (isLoading) {
       return (
         <div>
@@ -18,7 +18,7 @@ class LocationList extends React.Component {
     return (
       <List>
         {this.props.items.map(i => (
-          <LocationItem key={i.id} item={i}/>
+          <LocationItem key={i.id} item={i} />
         ))}
       </List>
     )

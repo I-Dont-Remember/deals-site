@@ -16,25 +16,27 @@ import ListItem from "@material-ui/core/ListItem"
 // }
 
 class DealsContainer extends React.Component {
-    render() {
-        const deals = this.props.deals
+  render() {
+    const deals = this.props.deals
 
-        return (
-            <Card style={{backgroundColor: `#f3f3f3`, margin: `2em`,   boxShadow: `8px 8px 5px 0px #888888`}}>
-                <CardContent>
-
-                    <List>
-                        {deals.map(d => (<ListItem key={d.id}>{d.description}</ListItem>))}
-                    </List>
-                </CardContent>
-            </Card>
-
-        )
-    }
+    return (
+      <Card
+        style={{
+          backgroundColor: `#f3f3f3`,
+          margin: `2em`,
+          boxShadow: `8px 8px 5px 0px #888888`,
+        }}
+      >
+        <CardContent>
+          <List>
+            {deals.map(d => (
+              <ListItem key={d.id}>{d.description}</ListItem>
+            ))}
+          </List>
+        </CardContent>
+      </Card>
+    )
+  }
 }
-
-
-
-
 
 export default DealsContainer

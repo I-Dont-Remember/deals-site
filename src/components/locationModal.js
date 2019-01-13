@@ -12,35 +12,39 @@ const modalStyle = {
   height: `80%`,
   backgroundColor: `#ffffff`,
   display: "flex",
-  flexDirection: "column"
+  flexDirection: "column",
 }
 
 class LocationModal extends React.Component {
   render() {
     const location = this.props.location
 
-    return (
-      <div>
-        <Modal open={this.props.open} onClose={this.props.handleClose}>
-          <div style={modalStyle}>
-            <Button onClick={this.props.handleClose} color="primary">Close me</Button>
-            <Typography variant="h6" id="modal-title">
-              {location.name}
-            </Typography>
-            <Typography component="h3">
-                site: {location.website}
-            </Typography>            
-            <Typography component="h3">
+    if (location) {
+      return (
+        <div>
+          <Modal open={this.props.open} onClose={this.props.handleClose}>
+            <div style={modalStyle}>
+              <Button onClick={this.props.handleClose} color="primary">
+                Close me
+              </Button>
+              <Typography variant="h6" id="modal-title">
+                {location.name}
+              </Typography>
+              <Typography component="h3">site: {location.website}</Typography>
+              <Typography component="h3">
                 phone: {location.phoneNumber}
-            </Typography>            
-            <Typography component="h3">
+              </Typography>
+              <Typography component="h3">
                 Addr: {location.displayAddress}
-            </Typography>
-            <DealsContainer deals={location.deals} />
-          </div>
-        </Modal>
-      </div>
-    )
+              </Typography>
+              <DealsContainer deals={location.deals} />
+            </div>
+          </Modal>
+        </div>
+      )
+    } else {
+      return <div>No Location</div>
+    }
   }
 }
 

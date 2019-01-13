@@ -29,9 +29,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <MuiThemeProvider theme={theme}>
-            {children}
-        </MuiThemeProvider>
+        <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
       </>
     )}
   />
