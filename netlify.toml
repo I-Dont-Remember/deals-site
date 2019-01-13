@@ -1,0 +1,13 @@
+# Netlify.toml reference https://www.netlify.com/docs/netlify-toml-reference/
+
+# Node version is set by .nvmrc
+[build]
+    base = "/"
+    command = "npm run build"
+    publish = "public"
+
+# anything special that needs to be set in prod
+# [context.production]
+
+# anything special that needs to be set in branch deploys
+# [context.branch_deploy]
