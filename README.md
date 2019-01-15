@@ -12,7 +12,7 @@
 
 Obviously this site is built using Gatsby, a powerful static site generator that lets us easily build a PWA (Progressive Web App) while using React, which has lots of documentation and examples with it's large user-base.  To easily develop for simulated mobile environments, browser dev tools have the option for Responsive/mobile.  To audit it's PWA goodness, they also contain LightHouse (might only be Chrome), which will run a test and provide information about the site.
 
-To get started, clone the repo and run `npm i`.  That should get all the dependencies you need setup & since `gatsby-cli` is a dev-dependency you don't even need the global version.
+To get started, clone the repo and run `npm i`.  That should get all the dependencies you need setup & since `gatsby-cli` is a dev-dependency you don't even need the global version.  Running the dev server is `npm start` and before pushing up a new commit, make sure to run `npm format` and `npm run serve` which will build a production bundle and serve it on `localhost:9000` to make sure things seem hunky dory.  These steps should definitely be automated with git hooks/VS Code extensions/etc so there's no accidentally pushing garbage.
 
 ## Gatsby Default README
 

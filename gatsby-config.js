@@ -21,10 +21,10 @@ module.exports = {
         name: `Deals On Tap`,
         short_name: `DoT`,
         start_url: `/`,
-        background_color: `#f6755e`,
-        theme_color: `#f6755e`,
+        background_color: `#e8894a`,
+        theme_color: `#e8894a`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/beer-tap.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -34,7 +34,7 @@ module.exports = {
         resolve:  `@wapps/gatsby-plugin-material-ui`,
         options: {
             theme: {
-                primaryColor: '#f6755e',
+                primaryColor: '#e8894a',
             },
         },
     }
