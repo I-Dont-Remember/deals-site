@@ -9,8 +9,8 @@ class LocationList extends React.Component {
     if (isLoading) {
       return (
         <div>
-          <Typography variant="h3" component="h3">
-            Loading beep boop beep........
+          <Typography variant="h4" component="h4">
+            Loading....
           </Typography>
         </div>
       )

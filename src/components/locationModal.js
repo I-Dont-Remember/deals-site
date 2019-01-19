@@ -30,12 +30,15 @@ class LocationModal extends React.Component {
               <Typography variant="h6" id="modal-title">
                 {location.name}
               </Typography>
+              <Typography component="h4">
+                {location.campus_slug}
+              </Typography>
               <Typography component="h3">site: {location.website}</Typography>
               <Typography component="h3">
-                phone: {location.phoneNumber}
+                phone: {location.phone_number}
               </Typography>
               <Typography component="h3">
-                Addr: {location.displayAddress}
+                Addr: {location.display_address}
               </Typography>
               <DealsContainer deals={location.deals} />
             </div>
