@@ -3,6 +3,7 @@ module.exports = {
     title: `Deals On Tap`,
     description: `Deals. Now.`,
     author: `kpquinn2@wisc.edu`,
+    site_env: process.env.SITE_ENV
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

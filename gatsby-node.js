@@ -6,9 +6,24 @@
 
 // You can delete this file if you're not using it
 //
-
 const axios = require("axios");
-const basePath = "http://localhost:4500"
+const process = require("process");
+const url = {
+    local: "http://lvh.me:4500",
+    dev: "https://pvosoby5yl.execute-api.us-east-2.amazonaws.com/dev",
+    prod: "https://o467nl9wi3.execute-api.us-east-2.amazonaws.com/prod"
+};
+
+let basePath;
+
+switch(process.env.SITE_ENV) {
+    case "local": basePath = url.local; break;
+    case "dev": basePath = url.dev; break;
+    case "prod": basePath = url.prod; break;
+    default:
+        throw Error("Unknown SITE_ENV " + process.env.SITE_ENV);
+}
+
 const get = path => axios.get(`${basePath}${path}`);
 
 const getLocationData = () => {
