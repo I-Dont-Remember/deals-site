@@ -1,20 +1,35 @@
 import React from "react"
 
-import Header from "../components/header"
+import SearchHeader from "../components/searchHeader"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import LocationList from "../components/locationList"
 const Client = require("../api");
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
 class IndexPage extends React.Component {
   state = {
     searchValue: "",
     isLoading: true,
-    items: []
+    items: [],
+    filteredItems: []
   }
 
   searchOnChange = event => {
     this.setState({ searchValue: event.target.value })
+  }
+
+  handleSearch = () => {
+    this.setState({ isLoading: true });
+    // TODO: send the search term to be stored for analytics
+    const items = this.state.items;
+    // fake that we called the API, hue hue hue hue hue
+    const wait = getRandomInt(500) + 100;
+    setTimeout(() => this.setState({ isLoading: false }), wait);
+    this.setState({ filteredItems: this.filterItems(items) });
   }
 
   componentDidMount() {
@@ -29,29 +44,44 @@ class IndexPage extends React.Component {
     })
     .then(items => {
         console.log(items);
-        this.setState({ items: items, isLoading: false});
+        this.setState({ items: items, filteredItems: items, isLoading: false});
     })
     .catch(function (err) {
         console.log("Issue: " + err);
     })
   }
 
-  filterItems() {
-    const value = this.state.searchValue.toLowerCase();
-    return this.state.items.filter(i => {
-      for (let d of i.deals) {
-        if (d.description.toLowerCase().indexOf(value) !== -1) {
-          return true
+
+  getValidDeals(deals, value) {
+    let list = [];
+    console.log("Value " + value);
+    for (let i in deals) {
+        if (deals[i].description.toLowerCase().indexOf(value) !== -1) {
+            list.push(deals[i]);
         }
-      }
-      return false
-    })
+    }
+    return list;
+  }
+
+  filterItems(items) {
+    const value = this.state.searchValue.toLowerCase();
+    
+    return items.filter(i => {
+        const validDeals = this.getValidDeals(i.deals, value);
+        console.log(`${i.name} valid deals len: ${validDeals.length}`);
+        if (validDeals.length > 0) {
+            i.deals = validDeals;
+            return true;
+        } else {
+            return false;
+        }
+    });
   }
 
   render() {
     return (
       <Layout>
-        <Header searchOnChange={this.searchOnChange} />
+        <SearchHeader handleSearch={this.handleSearch} searchOnChange={this.searchOnChange}/>
         <div
           style={{
             margin: `0 auto`,
@@ -61,9 +91,8 @@ class IndexPage extends React.Component {
           }}
         >
           <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-          <div>{this.state.searchValue}</div>
           <LocationList
-            items={this.filterItems()}
+            items={this.state.filteredItems}
             isLoading={this.state.isLoading}
           />
         </div>

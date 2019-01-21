@@ -24,10 +24,12 @@ switch(process.env.GATSBY_ENV) {
         throw Error("Unknown GATSBY_ENV " + process.env.GATSBY_ENV);
 }
 
+console.log("[*] using url " + basePath + " for env " + process.env.GATSBY_ENV);
+
 const get = path => axios.get(`${basePath}${path}`);
 
 const getLocationData = () => {
-    return get("/campuses/uw-madison/locations");
+    return get("/campuses/uw-madison/locations?expand=deals");
 };
 
 exports.createPages = async ({ actions: { createPage} }) => {
