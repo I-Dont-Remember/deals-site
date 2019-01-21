@@ -22,19 +22,18 @@ class LocationItem extends React.Component {
   }
 
   handleClose = () => {
-    console.log("closing")
     this.setState({ open: false })
   }
 
   toLocationPage = () => {
     const item = this.props.item;
 
+    // TODO: we need a better way than just passing making 1 api call and passing junk through lots of layers
     navigate("/" + item.id + "/");
   }
 
   // use the slice of deals just to show a limited number so we don't overwhelm the page
   render() {
-    console.log(this.state);
     return (
       <Card style={styles.card}>
         <CardActionArea onClick={this.toLocationPage}>

@@ -16,12 +16,12 @@ const url = {
 
 let basePath;
 
-switch(process.env.SITE_ENV) {
+switch(process.env.GATSBY_ENV) {
     case "local": basePath = url.local; break;
     case "dev": basePath = url.dev; break;
     case "prod": basePath = url.prod; break;
     default:
-        throw Error("Unknown SITE_ENV " + process.env.SITE_ENV);
+        throw Error("Unknown GATSBY_ENV " + process.env.GATSBY_ENV);
 }
 
 const get = path => axios.get(`${basePath}${path}`);

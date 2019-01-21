@@ -4,6 +4,7 @@ import Header from "../components/header"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import LocationList from "../components/locationList"
+const Client = require("../api");
 
 class IndexPage extends React.Component {
   state = {
@@ -17,10 +18,13 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
-    const apiUrl = "http://lvh.me:4500/campuses/random-slug/locations?expand=deals"
+    const client = new Client();
+      
+    //const apiUrl = "http://lvh.me:4500/campuses/random-slug/locations?expand=deals"
     // call api here for initial deals, this is just to simulate loading data
-    fetch(apiUrl)
-    .then(response => {
+    //fetch(apiUrl)
+    client.getLocationsWithDeals("uw-madison")
+      .then(response => {
         return response.json();
     })
     .then(items => {
@@ -28,7 +32,7 @@ class IndexPage extends React.Component {
         this.setState({ items: items, isLoading: false});
     })
     .catch(function (err) {
-        console.log("Err: " + err);
+        console.log("Issue: " + err);
     })
   }
 
