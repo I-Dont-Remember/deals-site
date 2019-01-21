@@ -8,9 +8,9 @@
 
 # anything special that needs to be set in prod
 [context.production.environment]
-    SITE_ENV = "prod"
+    GATSBY_ENV = "prod"
 
 # anything special that needs to be set in branch deploys
 [context.branch_deploy.environment]
-    SITE_ENV = "dev"
+    GATSBY_ENV = "dev"
 
