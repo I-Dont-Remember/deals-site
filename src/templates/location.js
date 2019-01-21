@@ -16,6 +16,7 @@ const styles = {
     }
 };
 
+
 export default ({ pageContext: {location} }) => (
     <Layout>
         <Header title={location.name}/>
@@ -23,7 +24,10 @@ export default ({ pageContext: {location} }) => (
             <Card>
                 <CardContent>
                     <h2>{location.name}</h2>
-                    <h3>site: www.com</h3>
+                    {(location.display_address !== "") && <h3>{location.display_address}</h3>}
+                    {(location.phone_number !== "") && <h3>{location.phone_number}</h3>}
+                    {(location.website !== "") && <h3>{location.website}</h3>}
+                    {(location.yelp_link !== "") && <h3>{location.yelp_link}</h3>}
                     <DealsContainer deals={location.deals} />
                 </CardContent>
             </Card>
