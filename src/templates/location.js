@@ -13,6 +13,9 @@ const styles = {
         maxWidth: 960,
         padding: `0px 1.0875rem 1.45rem`,
         paddingTop: 10,
+    },
+    info: {
+        marginBottom: `5px`
     }
 };
 
@@ -23,11 +26,11 @@ export default ({ pageContext: {location} }) => (
         <div style={styles.div}>
             <Card>
                 <CardContent>
-                    <h2>{location.name}</h2>
-                    {(location.display_address !== "") && <h3>{location.display_address}</h3>}
-                    {(location.phone_number !== "") && <h3>{location.phone_number}</h3>}
-                    {(location.website !== "") && <h3>{location.website}</h3>}
-                    {(location.yelp_link !== "") && <h3>{location.yelp_link}</h3>}
+                    <h3>{location.name}</h3>
+                    {(location.display_address !== "") && <p style={styles.info}>{location.display_address}</p>}
+                    {(location.phone_number !== "") && <p style={styles.info}>Phone: {location.phone_number}</p>}
+                    {(location.website !== "") && <p style={styles.info}>Site: {location.website}</p>}
+                    {(location.yelp_link !== "") && <p style={styles.info}>Yelp: {location.yelp_link}</p>}
                     <DealsContainer deals={location.deals} />
                 </CardContent>
             </Card>

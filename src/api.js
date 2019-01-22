@@ -49,5 +49,20 @@ Client.prototype.getDeals = function (id) {
     return this.call(path);
 };
 
+Client.prototype.sendData = function (value) {
+    const data = {
+        timestamp: Date.now().toString(),
+        search_term: value
+    };
+
+    const path = this.basePath + "/analytics";
+    console.log("analytics path " + path);
+    const options = {
+        method: "post",
+        body: JSON.stringify(data)
+    };
+    return fetch(path, options);
+};
+
 module.exports = Client;
 

@@ -24,20 +24,26 @@ class IndexPage extends React.Component {
 
   handleSearch = () => {
     this.setState({ isLoading: true });
-    // TODO: send the search term to be stored for analytics
     const items = this.state.items;
     // fake that we called the API, hue hue hue hue hue
     const wait = getRandomInt(500) + 100;
     setTimeout(() => this.setState({ isLoading: false }), wait);
     this.setState({ filteredItems: this.filterItems(items) });
+
+    // send the search term to be stored for analytics
+    const client = new Client();
+    client.sendData(this.state.searchValue.toLowerCase())
+        .then(response => {
+            console.log(response);
+        })
+      .catch(function (err) {
+        console.log("failed sending search data " + err);
+      });
   }
 
   componentDidMount() {
     const client = new Client();
-      
-    //const apiUrl = "http://lvh.me:4500/campuses/random-slug/locations?expand=deals"
-    // call api here for initial deals, this is just to simulate loading data
-    //fetch(apiUrl)
+
     client.getLocationsWithDeals("uw-madison")
       .then(response => {
         return response.json();

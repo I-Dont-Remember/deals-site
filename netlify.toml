@@ -11,6 +11,6 @@
     GATSBY_ENV = "prod"
 
 # anything special that needs to be set in branch deploys
-[context.branch_deploy.environment]
+[context.develop.environment]
     GATSBY_ENV = "dev"
 
