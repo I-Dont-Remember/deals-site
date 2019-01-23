@@ -1,0 +1,49 @@
+name: "The Churchkey"
+campusSlug: "uw-madison"
+displayAddress: "626 University Ave, Madison,WI 53715"
+website: "http://thechurchkeybar.com/"
+phoneNumber: "608-259-0444"
+deals:
+  - description: "Free mini-corndogs or frickles with every drink, 9pm-midnight"
+    days:
+      - "Tue"
+
+  - description: "Double rails $2"
+    days:
+      - "Tue"
+
+  - description: "$1 cans of Rolling Rock, High Life, & PBR"
+    days:
+      - "Tue"
+
+  - description: "Captain Morgan doubles $3.25"
+    days:
+      - "Wed"
+
+  - description: "Domestic pitchers $5"
+    days:
+      - "Wed"
+
+  - description: "$10 all you can drink, 10pm - 1am"
+    days:
+      - "Thu"
+
+  - description: "$0.10 wings and 5 Bud Lights for $10"
+    days:
+      - "Thu"
+
+  - description: "PBR Tallboys $2.50"
+    days:
+      - "Fri"
+
+  - description: "$5 shot and beer combo"
+    days:
+      - "Fri"
+
+  - description: "$6 for 2 tallboys"
+    days:
+      - "Sat"
+
+  - description: "$3 Long Islands"
+    days:
+      - "Sat"

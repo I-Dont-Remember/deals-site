@@ -1,7 +1,6 @@
 import React from "react"
 import LocationItem from "./locationItem"
 import List from "@material-ui/core/List"
-import Typography from "@material-ui/core/Typography"
 import CircularProgress from "@material-ui/core/CircularProgress"
 
 const styles = {
@@ -15,8 +14,20 @@ const styles = {
 };
 
 class LocationList extends React.Component {
+
+    hasValidDeals(node, term) {
+        const deals = node.deals;
+        const matches = deals.filter(deal => {
+            return deal.description.indexOf(term) !== -1;
+        });
+        return matches.length > 0;
+    }
+
   render() {
     const isLoading = this.props.isLoading;
+    const term = this.props.searchTerm;
+    const edges = this.props.edges;
+
     if (isLoading) {
       return (
         <div style={styles.progressDiv}>
@@ -26,9 +37,11 @@ class LocationList extends React.Component {
     }
     return (
       <List>
-        {this.props.items.map(i => (
-          <LocationItem key={i.id} item={i} />
-        ))}
+        {edges.map(e => {
+            return (this.hasValidDeals(e.node, term) &&
+          <LocationItem key={e.node.name} item={e.node} searchTerm={term} />
+        )
+            })}
       </List>
     )
   }

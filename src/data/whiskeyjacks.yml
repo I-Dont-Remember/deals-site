@@ -1,0 +1,39 @@
+name: "Whiskey Jacks Saloon"
+campusSlug: "uw-madison"
+displayAddress: "552 State St, Madison,WI 53703"
+phoneNumber: "608-819-8881"
+website: "http://www.whiskeyjacksmadtown.com/"
+yelpLink: "https://www.yelp.com/biz/whiskey-jacks-saloon-madison"
+deals:
+  - description: "2-4-1 schnorkel shots, 9pm - close"
+    days: 
+      - "Mon"
+
+  - description: "$4 double rail mixers, 9pm - close"
+    days:
+      - "Mon"
+
+  - description: "$5 pitchers of Miller Lt, Coors Lt, & Spotted Cow"
+    days:
+      - "Mon"
+
+  - description: "$0.25 PBR taps & rail mixers"
+    days:
+      - "Thu"
+  
+  - description: "$0.50 PBR taps & rail mixers"
+    days:
+      - "Thu"
+
+
+  - description: "$1 PBR taps & rail mixers"
+    days:
+      - "Thu"
+
+  - description: "$3 PBR pitchers & double rails"
+    days:
+      - "Thu"
+
+  - description: "2-4-1 shots; 90 to choose from"
+    days:
+      - "Thu"
