@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React from "react"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -64,7 +63,7 @@ class SearchHeader extends React.Component {
         <AppBar style={styles.appBar} position="static">
             <Toolbar style={styles.toolbar}>
                 <Paper style={styles.paper} elevation={1}>
-                    <InputBase style={styles.searchInput} placeholder="try 'wings' or 'shots'..." onChange={this.props.searchOnChange} />
+                    <InputBase style={styles.searchInput} placeholder="try 'wings' or 'shots'..." onChange={this.props.searchOnChange} onKeyPress={this.props.handleKeyPress}/>
 
                     <IconButton onClick={this.props.handleSearch}><SearchIcon /></IconButton>
                 </Paper>

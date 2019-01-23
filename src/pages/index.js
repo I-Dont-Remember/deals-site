@@ -22,7 +22,7 @@ class IndexPage extends React.Component {
         // if value is empty (user backspaced to nothing), show everything again
         const value = event.target.value.toLowerCase();
         let update = { inputValue: value };
-        if (value == "") {
+        if (value === "") {
             update.searchTerm = "";
         }
         this.setState(update)
@@ -44,6 +44,13 @@ class IndexPage extends React.Component {
         .catch(function (err) {
             console.log("failed sending search data " + err);
         });
+    }
+
+    handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            console.log("enter was pressed")
+            this.handleSearch();
+        }
     }
 
   render() {
@@ -69,7 +76,7 @@ class IndexPage extends React.Component {
     `}>
         {data => (
         <Layout>
-            <SearchHeader handleSearch={this.handleSearch} searchOnChange={this.searchOnChange}/>
+            <SearchHeader handleSearch={this.handleSearch} searchOnChange={this.searchOnChange} handleKeyPress={this.handleKeyPress} />
             <div
             style={{
                 margin: `0 auto`,
