@@ -16,7 +16,6 @@ function Client() {
             throw Error("Unknown GATSBY_ENV " + process.env.GATSBY_ENV);
     }
     this.basePath = base;
-    console.log(this.basePath + "  " + process.env.GATSBY_ENV);
 };
 
 Client.prototype.call = function (path) {
@@ -49,12 +48,12 @@ Client.prototype.getDeals = function (id) {
     return this.call(path);
 };
 
-Client.prototype.sendData = function (value) {
+Client.prototype.sendData = function (term) {
     const data = {
         timestamp: Date.now().toString(),
-        search_term: value
+        searchTerm: term
     };
-
+    console.log(data);
     const path = this.basePath + "/analytics";
     console.log("analytics path " + path);
     const options = {

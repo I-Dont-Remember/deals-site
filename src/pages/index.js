@@ -29,14 +29,15 @@ class IndexPage extends React.Component {
     }
 
     handleSearch = () => {
-        this.setState({ isLoading: true, searchTerm: this.state.inputValue });
+        const value = this.state.inputValue;
+        this.setState({ isLoading: true, searchTerm: value });
         // fake that we called the API, hue hue hue hue hue
         const wait = getRandomInt(500) + 100;
         setTimeout(() => this.setState({ isLoading: false }), wait);
     
         // send the search term to be stored for analytics
         const client = new Client();
-        client.sendData(this.state.searchTerm.toLowerCase())
+        client.sendData(value)
             .then(response => {
                 console.log(response);
             })
