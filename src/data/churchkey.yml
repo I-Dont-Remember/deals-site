@@ -7,43 +7,66 @@ deals:
   - description: "Free mini-corndogs or frickles with every drink, 9pm-midnight"
     days:
       - "Tue"
-
+    types:
+      - "Food"
+  
   - description: "Double rails $2"
     days:
       - "Tue"
+    types:
+      - "Drinks"
 
   - description: "$1 cans of Rolling Rock, High Life, & PBR"
     days:
       - "Tue"
+    types:
+      - "Drinks"
 
   - description: "Captain Morgan doubles $3.25"
     days:
       - "Wed"
+    types:
+      - "Drinks"
 
   - description: "Domestic pitchers $5"
     days:
       - "Wed"
+    types:
+      - "Drinks"
 
   - description: "$10 all you can drink, 10pm - 1am"
     days:
       - "Thu"
+    types:
+      - "Drinks"
 
   - description: "$0.10 wings and 5 Bud Lights for $10"
     days:
       - "Thu"
+    types:
+      - "Drinks"
+      - "Food"
 
   - description: "PBR Tallboys $2.50"
     days:
       - "Fri"
+    types:
+      - "Drinks"
 
   - description: "$5 shot and beer combo"
     days:
       - "Fri"
+    types:
+      - "Drinks"
 
   - description: "$6 for 2 tallboys"
     days:
       - "Sat"
+    types:
+      - "Drinks"
 
   - description: "$3 Long Islands"
     days:
       - "Sat"
+    types:
+      - "Drinks"

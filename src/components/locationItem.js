@@ -13,32 +13,24 @@ const styles = {
 
 class LocationItem extends React.Component {
   toLocationPage = () => {
-    const item = this.props.item;
-    navigate(item.fields.slug);
+    const location = this.props.location;
+    navigate(location.fields.slug);
   }
 
-    getValidDeals(deals, term) {
-        const matches = deals.filter(deal => {
-            return deal.description.indexOf(term) !== -1;
-        });
-        return matches;
-    }
-
-  // use the slice of deals just to show a limited number so we don't overwhelm the page
   render() {
-      const item = this.props.item;
-      const term = this.props.searchTerm;
+      const location = this.props.location;
+      const deals = this.props.validDeals;
 
     return (
       <Card style={styles.card}>
         <CardActionArea onClick={this.toLocationPage}>
             <CardContent>
             <Typography variant="h5" component="h2">
-            {item.name}
+            {location.name}
             </Typography>
             <ul>
-                {this.getValidDeals(item.deals, term).slice(0, 3).map(d => (
-                <li key={d.description}>{d.description}</li>
+                {deals.map(d => (
+                <li key={d.description}>{d.description + " | " + d.types + " | " + d.days}</li>
                 ))}
             </ul>
             </CardContent>

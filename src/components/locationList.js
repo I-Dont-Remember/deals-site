@@ -13,19 +13,57 @@ const styles = {
     }
 };
 
+
+
 class LocationList extends React.Component {
 
-    hasValidDeals(node, term) {
+    // if it matches any types, let it through
+    isNotFiltered(deal) {
+        const drinks = this.props.drinks;
+        const events = this.props.events;
+        const food = this.props.food;
+        const types = deal.types;
+        const day = this.props.day;        
+        if (deal.types === undefined || deal.types === null) {
+            return false
+        }
+
+        let validType = false;
+        if (drinks && types.includes("Drinks")) {
+            validType = true
+        }
+
+        if (food && types.includes("Food")) {
+            validType = true
+        }
+
+        if (events && types.includes("Events")) {
+            validType =  true
+        }
+        
+        // type isn't filtered and it's on the day users want to see
+        return validType && deal.days.includes(day);
+    }
+
+    // use the slice of deals just to show a limited number so we don't overwhelm the page
+    getValidDeals(node) {
+        const term = this.props.searchTerm;
         const deals = node.deals;
+
+        console.log("------");
         const matches = deals.filter(deal => {
-            return deal.description.indexOf(term) !== -1;
+            const notFiltered = this.isNotFiltered(deal);
+            if (notFiltered) {
+                console.log(deal);
+            }
+            return (deal.description.indexOf(term) !== -1) && notFiltered
+                        
         });
-        return matches.length > 0;
+        return matches;
     }
 
   render() {
     const isLoading = this.props.isLoading;
-    const term = this.props.searchTerm;
     const edges = this.props.edges;
 
     if (isLoading) {
@@ -38,8 +76,14 @@ class LocationList extends React.Component {
     return (
       <List>
         {edges.map(e => {
-            return (this.hasValidDeals(e.node, term) &&
-          <LocationItem key={e.node.name} item={e.node} searchTerm={term} />
+            const validDeals = this.getValidDeals(e.node);
+            return (
+        (validDeals.length > 0) &&
+          <LocationItem 
+            key={e.node.name} 
+            location={e.node}
+            validDeals={validDeals}
+            />
         )
             })}
       </List>

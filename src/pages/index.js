@@ -11,11 +11,60 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
+function getCurrentDay() {
+    const d = new Date();
+    const dayNum = d.getDay();
+    const hour = d.getHours();
+
+    // if it's before 2am, show the day before because
+    // people are still at bars
+    if (hour < 2) {
+        if (dayNum == 0) {
+            dayNum = 6;
+        } else {
+            dayNum = dayNum - 1;
+        }
+    }
+
+    let dayStr;
+    switch (dayNum) {
+        case 0:
+            dayStr = "Sun";
+            break;
+        case 1:
+            dayStr = "Mon";
+            break;
+        case 2:
+            dayStr = "Tue";
+            break;
+        case 3:
+            dayStr = "Wed";
+            break;
+        case 4:
+            dayStr = "Thu";
+            break;
+        case 5:
+            dayStr = "Fri";
+            break;
+        case 6:
+            dayStr = "Sat";
+            break;
+        default:
+            console.log("Unknown day number " + dayNum);
+            dayStr = "Mon";
+    }
+    return dayStr;
+}
+
 class IndexPage extends React.Component {
     state = {
         inputValue: "",
         searchTerm: "",
-        isLoading: false
+        isLoading: false,
+        drinks: true,
+        food: true,
+        events: true,
+        day: getCurrentDay()
     };
 
     searchOnChange = event => {
@@ -53,7 +102,28 @@ class IndexPage extends React.Component {
         }
     }
 
+    handleDrinksChange = (event) => {
+        console.log("Changing drinks")
+        this.setState({ drinks: event.target.checked });
+    }
+
+    handleFoodChange = (event) => {
+        console.log("changing food")
+        this.setState({ food: event.target.checked });
+    }
+
+    handleEventsChange = (event) => {
+        console.log("changing events")
+        this.setState({ events: event.target.checked });
+    }
+
+    handleDaysChange = (event) => {
+        console.log("Updating day")
+        this.setState({ day: event.target.value });
+    }
+
   render() {
+      console.log(this.state);
     return (
     <StaticQuery
         query={graphql`
@@ -68,6 +138,7 @@ class IndexPage extends React.Component {
                         deals {
                             description
                             days
+                            types
                         }
                     }
                 }
@@ -76,7 +147,19 @@ class IndexPage extends React.Component {
     `}>
         {data => (
         <Layout>
-            <SearchHeader handleSearch={this.handleSearch} searchOnChange={this.searchOnChange} handleKeyPress={this.handleKeyPress} />
+            <SearchHeader 
+                handleSearch={this.handleSearch}
+                searchOnChange={this.searchOnChange} 
+                handleKeyPress={this.handleKeyPress}
+                handleFood={this.handleFoodChange}
+                handleDrinks={this.handleDrinksChange}
+                handleEvents={this.handleEventsChange}
+                handleDaysChange={this.handleDaysChange}
+                day={this.state.day}
+                food={this.state.food}
+                drinks={this.state.drinks}
+                events={this.state.events}
+            />
             <div
             style={{
                 margin: `0 auto`,
@@ -90,6 +173,10 @@ class IndexPage extends React.Component {
                 edges={data.allDataYaml.edges}
                 isLoading={this.state.isLoading}
                 searchTerm={this.state.searchTerm}
+                day={this.state.day}
+                drinks={this.state.drinks}
+                food={this.state.food}
+                events={this.state.events}
             />
             </div>
         </Layout>
