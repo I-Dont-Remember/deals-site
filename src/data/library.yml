@@ -1,0 +1,59 @@
+name: The Library Cafe & Bar
+campusSlug: uw-madison
+displayAddress: 320 N Randall Ave, Madison,WI 53715
+phoneNumber: 608-251-1200
+website: https://www.librarycafeandbar.com/
+yelplink: https://www.yelp.com/biz/the-library-cafe-and-bar-madison
+deals:
+  - description: Happy Hour - $2.50 rail mixers, $2.25 domestics from 4-7pm
+    days:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+    types:
+      - Drinks
+
+  - description: $11 Burger and Beer combo 4-10pm
+    days:
+      - Mon
+    types:
+      - Food
+
+  - description: $4 margaritas
+    days:
+      - Mon
+    types:
+      - Drinks
+  
+  - description: Taco Tuesday & $3 double rail mixers
+    days:
+      - Tue
+    types:
+      - Food
+      - Drinks
+
+  - description: $3.50 Captain mixers
+    days:
+      - Thu
+    types:
+      - Drinks
+
+  - description: $3.25 Long Islands, 4 - close
+    days:
+      - Fri
+    types:
+      - Drinks
+
+  - description: $3.50 Jack mixers and $2.50 domestics
+    days:
+      - Sat
+    types:
+      - Drinks
+
+  - description: Trivia Tuesday! starts at 8
+    days:
+      - Tue
+    types:
+      - Event
