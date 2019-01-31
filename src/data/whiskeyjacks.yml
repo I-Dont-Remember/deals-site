@@ -1,54 +1,54 @@
-name: "Whiskey Jacks Saloon"
-campusSlug: "uw-madison"
-displayAddress: "552 State St, Madison,WI 53703"
-phoneNumber: "608-819-8881"
-website: "http://www.whiskeyjacksmadtown.com/"
-yelpLink: "https://www.yelp.com/biz/whiskey-jacks-saloon-madison"
+name: Whiskey Jacks Saloon
+campusSlug: uw-madison
+displayAddress: 552 State St, Madison,WI 53703
+phoneNumber: 608-819-8881
+website: http://www.whiskeyjacksmadtown.com/
+yelpLink: https://www.yelp.com/biz/whiskey-jacks-saloon-madison
 deals:
-  - description: "2-4-1 schnorkel shots, 9pm - close"
+  - description: 2-4-1 schnorkel shots, 9pm - close
     days: 
-      - "Mon"
+      - Mon
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$4 double rail mixers, 9pm - close"
+  - description: $4 double rail mixers, 9pm - close
     days:
-      - "Mon"
+      - Mon
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$5 pitchers of Miller Lt, Coors Lt, & Spotted Cow"
+  - description: $5 pitchers of Miller Lt, Coors Lt, & Spotted Cow
     days:
-      - "Mon"
+      - Mon
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$0.25 PBR taps & rail mixers"
+  - description: $0.25 PBR taps & rail mixers
     days:
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$0.50 PBR taps & rail mixers"
+  - description: $0.50 PBR taps & rail mixers
     days:
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$1 PBR taps & rail mixers"
+  - description: $1 PBR taps & rail mixers
     days:
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$3 PBR pitchers & double rails"
+  - description: $3 PBR pitchers & double rails
     days:
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "2-4-1 shots; 90 to choose from"
+  - description: 2-4-1 shots; 90 to choose from
     days:
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
+      - Drinks

@@ -1,0 +1,63 @@
+name: Lucky's
+campusSlug: uw-madison
+displayAddress: 1313 Regent Street, Madison,WI 53715
+phoneNumber: 608-250-8989
+website: http://luckys1313.com/
+yelplink: https://www.yelp.com/biz/luckys-1313-brew-pub-madison-2
+deals:
+  - description: Lucky's hour, 2-4-1 rail mixers 11pm-1am
+    days:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+      - Sun
+    types:
+      - Drinks
+
+  - description: Bachelor Monday - $15 bottles of wine
+    days:
+      - Mon
+    types:
+      - Drinks
+
+  - description: Beef/chicken tacos $1.50 each
+    days:
+      - Tue
+    types:
+      - Food
+    
+  - description: Trivia night - $6 Bud Light pitchers & $7 house brew pitchers
+    days:
+      - Wed
+    types:
+      - Event
+      - Drinks
+
+  - description: Bud Light taps $1 & $3 Long Islands
+    days:
+      - Thu
+    types:
+      - Drinks
+
+  - description: $3 Bud Light & Coors Light bottles
+    days:
+      - Fri
+    types:
+      - Drinks
+
+  - description: $5 brandy Old-Fashioned & $3 mimosas
+    days:
+      - Sat
+    types:
+      - Drinks
+
+  - description: Tito's mixers $3
+    days:
+      - Sun
+    types:
+      - Drinks
+
+

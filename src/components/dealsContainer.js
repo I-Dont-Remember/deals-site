@@ -30,7 +30,9 @@ class DealsContainer extends React.Component {
         <CardContent>
           <List>
             {deals.map(d => (
-              <ListItem key={d.description}>{d.days}: {d.description}</ListItem>
+              <ListItem key={d.description}>
+                {d.days}: {d.description}
+              </ListItem>
             ))}
           </List>
         </CardContent>

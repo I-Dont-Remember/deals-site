@@ -1,84 +1,84 @@
-name: "Sconnie Bar"
-campusSlug: "uw-madison"
-displayAddress: "1421 Regent St, Madison,WI 53711"
-phoneNumber: "608-819-8610"
-website: "https://sconniebar.com"
-yelpLink: "https://www.yelp.com/biz/sconniebar-madison"
+name: Sconnie Bar
+campusSlug: uw-madison
+displayAddress: 1421 Regent St, Madison,WI 53711
+phoneNumber: 608-819-8610
+website: https://sconniebar.com
+yelpLink: https://www.yelp.com/biz/sconniebar-madison
 deals:
-  - description: "Sconnie Hour: $1 rails, domestic taps, or specialty shots, 10:30-11:30pm"
+  - description: Sconnie Hour - $1 rails, domestic taps, or specialty shots, 10:30-11:30pm
     days:
-      - "Mon"
-      - "Tue"
-      - "Wed"
-      - "Thurs"
-      - "Fri"
-      - "Sat"
-      - "Sun"
+      - Mon
+      - Tue
+      - Wed
+      - Thurs
+      - Fri
+      - Sat
+      - Sun
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$8 Bacardi pitchers"
+  - description: $8 Bacardi pitchers
     days:
-      - "Mon"
+      - Mon
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "1/2 price Loaded Nachos 6-10pm"
+  - description: 1/2 price Loaded Nachos 6-10pm
     days:
-      - "Mon"
+      - Mon
     types:
-      - "Food"
+      - Food
 
-  - description: "$2 tacos 6-10pm"
+  - description: $2 tacos 6-10pm
     days: 
-      - "Tue"
+      - Tue
     types:
-      - "Food"
+      - Food
 
-  - description: "1/2 price rails"
+  - description: 1/2 price rails
     days:
-      - "Wed"
+      - Wed
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$1 domestic taps"
+  - description: $1 domestic taps
     days: 
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"  
+      - Drinks  
       
-  - description: "$3 double rail mixers"
+  - description: $3 double rail mixers
     days: 
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
+      - Drinks
       
-  - description: "$3 cherry bombs"
+  - description: $3 cherry bombs
     days: 
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$3 cherry bombs & captain mixers"
+  - description: $3 cherry bombs & captain mixers
     days:
-      - "Fri"
+      - Fri
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$5 High Life pitchers"
+  - description: $5 High Life pitchers
     days:
-      - "Sat"
+      - Sat
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "2-4-1 Mimosas"
+  - description: 2-4-1 Mimosas
     days:
-      - "Sun"
+      - Sun
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$2.5 taps of Miller Lite or Coors Light"
+  - description: $2.5 taps of Miller Lite or Coors Light
     days:
-      - "Sun"
+      - Sun
     types:
-      - "Drinks"
+      - Drinks

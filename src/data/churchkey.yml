@@ -1,72 +1,72 @@
-name: "The Churchkey"
-campusSlug: "uw-madison"
-displayAddress: "626 University Ave, Madison,WI 53715"
-website: "http://thechurchkeybar.com/"
-phoneNumber: "608-259-0444"
+name: The Churchkey
+campusSlug: uw-madison
+displayAddress: 626 University Ave, Madison,WI 53715
+website: http://thechurchkeybar.com/
+phoneNumber: 608-259-0444
 deals:
-  - description: "Free mini-corndogs or frickles with every drink, 9pm-midnight"
+  - description: Free mini-corndogs or frickles with every drink, 9pm-midnight
     days:
-      - "Tue"
+      - Tue
     types:
-      - "Food"
+      - Food
   
-  - description: "Double rails $2"
+  - description: Double rails $2
     days:
-      - "Tue"
+      - Tue
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$1 cans of Rolling Rock, High Life, & PBR"
+  - description: $1 cans of Rolling Rock, High Life, & PBR
     days:
-      - "Tue"
+      - Tue
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "Captain Morgan doubles $3.25"
+  - description: Captain Morgan doubles $3.25
     days:
-      - "Wed"
+      - Wed
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "Domestic pitchers $5"
+  - description: Domestic pitchers $5
     days:
-      - "Wed"
+      - Wed
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$10 all you can drink, 10pm - 1am"
+  - description: $10 all you can drink, 10pm - 1am
     days:
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$0.10 wings and 5 Bud Lights for $10"
+  - description: $0.10 wings and 5 Bud Lights for $10
     days:
-      - "Thu"
+      - Thu
     types:
-      - "Drinks"
-      - "Food"
+      - Drinks
+      - Food
 
-  - description: "PBR Tallboys $2.50"
+  - description: PBR Tallboys $2.50
     days:
-      - "Fri"
+      - Fri
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$5 shot and beer combo"
+  - description: $5 shot and beer combo
     days:
-      - "Fri"
+      - Fri
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$6 for 2 tallboys"
+  - description: $6 for 2 tallboys
     days:
-      - "Sat"
+      - Sat
     types:
-      - "Drinks"
+      - Drinks
 
-  - description: "$3 Long Islands"
+  - description: $3 Long Islands
     days:
-      - "Sat"
+      - Sat
     types:
-      - "Drinks"
+      - Drinks
