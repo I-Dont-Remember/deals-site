@@ -24,13 +24,13 @@ const dayOptions = [
 
 function getCurrentDay() {
     const d = new Date();
-    const dayNum = d.getDay();
+    let dayNum = d.getDay();
     const hour = d.getHours();
 
     // if it's before 2am, show the day before because
     // people are still at bars
     if (hour < 2) {
-        if (dayNum == 0) {
+        if (dayNum === 0) {
             dayNum = 6;
         } else {
             dayNum = dayNum - 1;
@@ -69,7 +69,6 @@ function getCurrentDay() {
             dayLabel = "Saturday";
             break;
         default:
-            console.log("Unknown day number " + dayNum);
             dayStr = "Mon";
             dayLabel = "Monday";
     }
@@ -102,7 +101,11 @@ class IndexPage extends React.Component {
 
     handleSearch = () => {
         const value = this.state.inputValue;
-        this.setState({ isLoading: true, searchTerm: value });
+        if (value === "") {
+            return;
+        }
+        
+        this.setState({ isLoading: true, searchTerm: value, inputValue: "" });
         // fake that we called the API, hue hue hue hue hue
         const wait = getRandomInt(500) + 100;
         setTimeout(() => this.setState({ isLoading: false }), wait);
@@ -126,33 +129,27 @@ class IndexPage extends React.Component {
     }
 
     handleDrinksChange = (event) => {
-        console.log("Changing drinks")
         this.setState({ drinks: event.target.checked });
     }
 
     handleFoodChange = (event) => {
-        console.log("changing food")
         this.setState({ food: event.target.checked });
     }
 
     handleEventsChange = (event) => {
-        console.log("changing events")
         this.setState({ events: event.target.checked });
     }
 
     handleDaysChange = (selectedOption) => {
-        console.log("Updating day")
         this.setState({ day: selectedOption.value, dayOption: selectedOption });
     }
 
     handleLocationSelectChange = (selectedOption) => {
-        console.log("updating location input")
         this.setState({ locationOption: selectedOption })
     }
 
-    onSearchKeyDown = (event) => {
+    onLocationKeyDown = (event) => {
         const key = event.key;
-        const inputValue = event.target.value;
         if (key === "Enter") {
             console.log("Pressed enter");
             console.log(event.target.value);
@@ -161,7 +158,6 @@ class IndexPage extends React.Component {
 
     handleLocationButton = () => {
         const option = this.state.locationOption;
-        console.log("MEEEEEE" + JSON.stringify(option));
         if (option !== undefined && option.value !== undefined) {
             navigate(option.value);
         } else {
@@ -170,7 +166,6 @@ class IndexPage extends React.Component {
     }
 
   render() {
-      console.log(this.state);
     return (
     <StaticQuery
         query={graphql`
@@ -211,7 +206,7 @@ class IndexPage extends React.Component {
                 locations={data.allDataYaml.edges.map(e => e.node)}
                 handleLocationSelectChange={this.handleLocationSelectChange}
                 search={this.state.search}
-                onKeyDown={this.onSearchKeyDown}
+                onKeyDown={this.onLocationKeyDown}
                 handleLocation={this.handleLocationButton}
             />
             <div

@@ -7,11 +7,9 @@ import InputBase from "@material-ui/core/InputBase"
 import IconButton from "@material-ui/core/IconButton"
 import Paper from "@material-ui/core/Paper"
 import Checkbox from '@material-ui/core/Checkbox'
-import FormLabel from '@material-ui/core/FormLabel'
 import FormControl from '@material-ui/core/FormControl'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import FormHelperText from '@material-ui/core/FormHelperText'
 import Select, { components } from "react-select"
 import Divider from '@material-ui/core/Divider'
 
@@ -46,9 +44,7 @@ const styles = {
         width: "60%",
         maxWidth: "300px"
     },
-    daySelect:{
-        color: "blue"
-    },
+    daySelect:{},
     control: {
         position: "relative",
         width: "100%"
@@ -79,7 +75,6 @@ function shimLocationOptions(locations) {
         let o = { value: locations[i].fields.slug, label: locations[i].name }
         options.push(o);
     }
-    console.log("O: " + JSON.stringify(options));
     return options;
 }
 
@@ -108,7 +103,7 @@ class SearchHeader extends React.Component {
         <AppBar style={styles.appBar} position="static">
             <Toolbar style={styles.toolbar}>
             <Paper style={styles.paper} elevation={1}>
-                    <InputBase style={styles.searchInput} placeholder="try 'wings' or 'shots'..." onChange={this.props.searchOnChange} onKeyPress={this.props.handleKeyPress}/>
+                    <InputBase style={styles.searchInput} placeholder="keyword search, try 'shots'..." onChange={this.props.searchOnChange} onKeyPress={this.props.handleKeyPress}/>
                     <Divider style={styles.divider} />
                     <IconButton onClick={this.props.handleSearch}><SearchIcon /></IconButton>
                 </Paper>

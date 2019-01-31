@@ -5,17 +5,17 @@ phoneNumber: "608-819-8881"
 website: "http://www.whiskeyjacksmadtown.com/"
 yelpLink: "https://www.yelp.com/biz/whiskey-jacks-saloon-madison"
 deals:
-  - description: "E:2-4-1 schnorkel shots, 9pm - close"
+  - description: "2-4-1 schnorkel shots, 9pm - close"
     days: 
       - "Mon"
     types:
-      - "Events"
+      - "Drinks"
 
-  - description: "E:$4 double rail mixers, 9pm - close"
+  - description: "$4 double rail mixers, 9pm - close"
     days:
       - "Mon"
     types:
-      - "Events"
+      - "Drinks"
 
   - description: "$5 pitchers of Miller Lt, Coors Lt, & Spotted Cow"
     days:

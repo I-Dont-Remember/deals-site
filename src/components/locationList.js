@@ -42,7 +42,7 @@ class LocationList extends React.Component {
         }
         
         // type isn't filtered and it's on the day users want to see
-        return validType && deal.days.includes(day);
+        return validType && (deal.days.includes(day) || day === "Any");
     }
 
     // use the slice of deals just to show a limited number so we don't overwhelm the page
@@ -50,12 +50,8 @@ class LocationList extends React.Component {
         const term = this.props.searchTerm;
         const deals = node.deals;
 
-        console.log("------");
         const matches = deals.filter(deal => {
             const notFiltered = this.isNotFiltered(deal);
-            if (notFiltered) {
-                console.log(deal);
-            }
             return (deal.description.indexOf(term) !== -1) && notFiltered
                         
         });

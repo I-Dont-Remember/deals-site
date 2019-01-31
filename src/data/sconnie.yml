@@ -1,0 +1,84 @@
+name: "Sconnie Bar"
+campusSlug: "uw-madison"
+displayAddress: "1421 Regent St, Madison,WI 53711"
+phoneNumber: "608-819-8610"
+website: "https://sconniebar.com"
+yelpLink: "https://www.yelp.com/biz/sconniebar-madison"
+deals:
+  - description: "Sconnie Hour: $1 rails, domestic taps, or specialty shots, 10:30-11:30pm"
+    days:
+      - "Mon"
+      - "Tue"
+      - "Wed"
+      - "Thurs"
+      - "Fri"
+      - "Sat"
+      - "Sun"
+    types:
+      - "Drinks"
+
+  - description: "$8 Bacardi pitchers"
+    days:
+      - "Mon"
+    types:
+      - "Drinks"
+
+  - description: "1/2 price Loaded Nachos 6-10pm"
+    days:
+      - "Mon"
+    types:
+      - "Food"
+
+  - description: "$2 tacos 6-10pm"
+    days: 
+      - "Tue"
+    types:
+      - "Food"
+
+  - description: "1/2 price rails"
+    days:
+      - "Wed"
+    types:
+      - "Drinks"
+
+  - description: "$1 domestic taps"
+    days: 
+      - "Thu"
+    types:
+      - "Drinks"  
+      
+  - description: "$3 double rail mixers"
+    days: 
+      - "Thu"
+    types:
+      - "Drinks"
+      
+  - description: "$3 cherry bombs"
+    days: 
+      - "Thu"
+    types:
+      - "Drinks"
+
+  - description: "$3 cherry bombs & captain mixers"
+    days:
+      - "Fri"
+    types:
+      - "Drinks"
+
+  - description: "$5 High Life pitchers"
+    days:
+      - "Sat"
+    types:
+      - "Drinks"
+
+  - description: "2-4-1 Mimosas"
+    days:
+      - "Sun"
+    types:
+      - "Drinks"
+
+  - description: "$2.5 taps of Miller Lite or Coors Light"
+    days:
+      - "Sun"
+    types:
+      - "Drinks"
