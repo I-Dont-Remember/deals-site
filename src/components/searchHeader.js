@@ -2,6 +2,7 @@ import React from "react"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import SearchIcon from "@material-ui/icons/Search"
+import NearMe from "@material-ui/icons/NearMe"
 import InputBase from "@material-ui/core/InputBase"
 import IconButton from "@material-ui/core/IconButton"
 import Paper from "@material-ui/core/Paper"
@@ -42,12 +43,33 @@ const styles = {
     },
     selectComponent: {
         position: "relative",
-        width: "92%",
-        maxWidth: "400px"
+        width: "60%",
+        maxWidth: "300px"
+    },
+    daySelect:{
+        color: "blue"
     },
     control: {
         position: "relative",
         width: "100%"
+    },
+    formLabel: {
+        marginRight: "8px"
+    },
+    checkbox: {
+        color: "white"
+    },
+    formSelect: {
+        width: "40%"
+    },
+    formControl: {
+        width: "100%"
+    },
+    formGroup: {
+        justifyContent: "center"
+    },
+    locationButton: {
+        padding: "8px"
     }
 };
 
@@ -73,6 +95,11 @@ const controlComponent = (props) => (
     </div>
 )
 
+const daySelectComponent = (props) => (
+    <div style={styles.daySelect}>
+        <components.Control {...props} />
+    </div>
+)
 class SearchHeader extends React.Component {
     // TODO: combine location names & keywords here for autosuggestion
     render() {
@@ -80,54 +107,73 @@ class SearchHeader extends React.Component {
       <div>
         <AppBar style={styles.appBar} position="static">
             <Toolbar style={styles.toolbar}>
+            <Paper style={styles.paper} elevation={1}>
+                    <InputBase style={styles.searchInput} placeholder="try 'wings' or 'shots'..." onChange={this.props.searchOnChange} onKeyPress={this.props.handleKeyPress}/>
+                    <Divider style={styles.divider} />
+                    <IconButton onClick={this.props.handleSearch}><SearchIcon /></IconButton>
+                </Paper>
+            </Toolbar>
+            <Toolbar style={styles.toolbar}>
                     <Select style={{ position: "relative", width: "421px"}}
                         components={{Control: controlComponent, SelectContainer: selectComponent }}
                         options={shimLocationOptions(this.props.locations)}
                         value={this.props.search}
-                        onChange={this.props.handleSearchChange}
+                        onChange={this.props.handleLocationSelectChange}
                         onKeyDown={this.props.onKeyDown}
-                        placeholder="Search locations or phrases"
+                        placeholder="view a location"
                         isClearable
                     />
+                    <Paper style={{marginLeft: "5px"}}>
+                        <IconButton style={styles.locationButton} onClick={this.props.handleLocation}><NearMe /></IconButton>
+                    </Paper>
             </Toolbar>
             <Toolbar style={styles.toolbar}>
-                <FormControl component="fieldset">
-                    <FormGroup row>
-                        <FormControlLabel
+                <FormControl component="fieldset" style={styles.formControl}>
+                    <FormGroup row style={styles.formGroup}>
+                        <FormControlLabel style={styles.formLabel}
                             control={
-                                <Checkbox 
+                                <Checkbox
+                                    style={styles.checkbox}
                                     checked={this.props.drinks}
                                     onChange={this.props.handleDrinks} 
                                 />
                             }
+                            labelPlacement="bottom"
                             label="Drinks"
                         />
-                        <FormControlLabel
+                        <FormControlLabel style={styles.formLabel}
                             control={
-                                <Checkbox 
+                                <Checkbox
+                                    style={styles.checkbox}
                                     checked={this.props.food}
                                     onChange={this.props.handleFood}
                                 />
                             }
+                            labelPlacement="bottom"
                             label="Food"
                         />
-                        <FormControlLabel
+                        <FormControlLabel style={styles.formLabel}
                             control={
-                                <Checkbox 
+                                <Checkbox
+                                    style={styles.checkbox}
                                     checked={this.props.events}
                                     onChange={this.props.handleEvents} 
                                 />
                             }
+                            labelPlacement="bottom"
                             label="Events"
                         />
-
+                        <FormControl style={styles.formSelect}>
+                            <Select
+                            native
+                            value={this.props.dayOption}
+                            onChange={this.props.handleDaysChange}
+                            options={this.props.dayOptions}
+                            components={{ Control: controlComponent, SelectContainer: daySelectComponent }}
+                            />
+                        </FormControl>
                     </FormGroup>
-                    <Select
-                        native
-                        value={this.props.dayOption}
-                        onChange={this.props.handleDaysChange}
-                        options={this.props.dayOptions}
-                    />
+
                 </FormControl>
             </Toolbar>
         </AppBar>

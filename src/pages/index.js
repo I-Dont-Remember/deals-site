@@ -4,7 +4,7 @@ import SearchHeader from "../components/searchHeader"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import LocationList from "../components/locationList"
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, StaticQuery, navigate } from "gatsby";
 const Client = require("../api");
 
 function getRandomInt(max) {
@@ -145,9 +145,9 @@ class IndexPage extends React.Component {
         this.setState({ day: selectedOption.value, dayOption: selectedOption });
     }
 
-    handleSearchChange = (selectedOption) => {
-        console.log("updating search input")
-        this.setState({ search: selectedOption })
+    handleLocationSelectChange = (selectedOption) => {
+        console.log("updating location input")
+        this.setState({ locationOption: selectedOption })
     }
 
     onSearchKeyDown = (event) => {
@@ -156,6 +156,16 @@ class IndexPage extends React.Component {
         if (key === "Enter") {
             console.log("Pressed enter");
             console.log(event.target.value);
+        }
+    }
+
+    handleLocationButton = () => {
+        const option = this.state.locationOption;
+        console.log("MEEEEEE" + JSON.stringify(option));
+        if (option !== undefined && option.value !== undefined) {
+            navigate(option.value);
+        } else {
+            alert("That location doesn't exist!")
         }
     }
 
@@ -199,9 +209,10 @@ class IndexPage extends React.Component {
                 events={this.state.events}
                 dayOptions={dayOptions}
                 locations={data.allDataYaml.edges.map(e => e.node)}
-                handleSearchChange={this.handleSearchChange}
+                handleLocationSelectChange={this.handleLocationSelectChange}
                 search={this.state.search}
                 onKeyDown={this.onSearchKeyDown}
+                handleLocation={this.handleLocationButton}
             />
             <div
             style={{
