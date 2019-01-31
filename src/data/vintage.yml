@@ -1,0 +1,65 @@
+name: Vintage Spirits And Grill
+campusSlug: uw-madison
+displayAddress: 529 University Ave, Madison,WI 53703
+phoneNumber: 608-250-0700
+website: http://vintagemadison.com/
+yelpLink: https://www.yelp.com/biz/vintage-spirits-and-grill-madison
+deals:
+  - description:  Happy Hour ($3 Vintage Brewing Co. Taps under 7% ABV, $2 Rail Mixers)
+    days:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+
+  - description: $2 Vintage Brewing Co. taps under 7% ABV, 9 - close
+    days:
+      - Mon
+    types:
+      - Drinks
+
+  - description: $6 Spaghetti Plate
+    days:
+      - Tue
+    types:
+      - Food
+
+  - description: Trivia Night! Free to play, top 3 win prizes, 7-9pm
+    days:
+      - Wed
+    types:
+      - Events
+
+  - description: Tacos - $2 chicken or beef, $2.50 fish 3-`10pm
+    days:
+      - Thu
+    types:
+      - Food
+
+  - description: $2 Smirnoff mixers, 9 - close
+    days:
+      - Thu
+    types:
+      - Drinks
+
+  - description: $12 Captain 40oz mini pitchers, 9 - close
+    days:
+      - Fri
+      - Sat
+    types:
+      - Drinks
+
+  - description: Breakfast and Bloody Mary Bar, 9am - Noon
+    days:
+      - Sat
+      - Sun
+    types:
+      - Food
+      - Drinks
+
+  - description: $3 Tito's and Tullamore Dew mixers, 3 - close
+    days:
+      - Sun
+    types:
+      - Drinks
