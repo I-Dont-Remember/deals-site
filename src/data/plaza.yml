@@ -1,0 +1,60 @@
+name: The Plaza Tavern
+campusSlug: uw-madison
+displayAddress: 319 North Henry Street, Madison,WI 53703
+phoneNumber: 608-255-6592
+website: http://www.theplazatavern.com/
+yelpLink: https://www.yelp.com/biz/the-plaza-tavern-madison
+deals:
+  - description: $2 rail drinks, 7 - close
+    days: 
+      - Mon
+    types:
+      - Drinks
+
+  - description: $1.50 PBR, 7 - close
+    days: 
+      - Mon
+    types:
+      - Drinks
+
+  - description: $3.50 Top-shelf Gin & Irish Whiskey, 7 - close
+    days:
+      - Tue
+    types:
+      - Drinks
+
+  - description: $3.50 Jack, Absolut, Stoli drinks, 7 - close
+    days:
+      - Wed
+    types:
+      - Drinks
+
+  - description: $2.50 Long Islands, 7 - close
+    days:
+      - Thu
+    types:
+      - Drinks
+
+  - description: $3 craft beer pints, 7 - close
+    days:
+      - Thu
+    types:
+      - Drinks
+
+  - description: $2.50 rail mixers, 9 - close
+    days:
+      - Fri
+    types:
+      - Drinks
+
+  - description: $2 PBR pints, 9 - close
+    days:
+      - Fri
+    types:
+      - Drinks
+
+  - description: $2.50 domestic bottles, 9 - close
+    days:
+      - Sat
+    types:
+      - Drinks

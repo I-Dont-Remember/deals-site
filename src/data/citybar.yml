@@ -1,0 +1,59 @@
+name: The City Bar
+campusSlug: uw-madison
+displayAddress: 636 State St, Madison,WI 53703
+phoneNumber: 608-250-2489
+website: http://www.citybarmadison.com/
+yelpLink: https://www.yelp.com/biz/city-bar-madison
+deals:
+  - description: Trivia Night, $50 gift card prize, starts 8:30pm
+    days: 
+      - Mon
+    types:
+      - Events
+
+  - description: Late Night Happy Hour - $2 rails & domestic bottle/cans, 9-11pm
+    days:
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+    types:
+      - Drinks
+
+  - description: Late Night Happy Hour - $3 Captain mixers, 9-11pm
+    days:
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+    types:
+      - Drinks
+
+  - description: Free darts, 7 - close
+    days:
+      - Tue
+    types:
+      - Events
+
+  - description: $3 Captain mixers, 9 - close
+    days:
+      - Thu
+    types:
+      - Drinks
+
+
+  - description: $3 16oz PBR, 7 - close
+    days:
+      - Fri
+      - Sat
+    types:
+      - Drinks
+
+  - description: $4.50 Tito's mixers, 7 - close
+    days:
+      - Fri
+      - Sat
+    types:
+      - Drinks
