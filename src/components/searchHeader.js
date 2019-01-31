@@ -11,7 +11,7 @@ import FormControl from '@material-ui/core/FormControl'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
-import Select from "@material-ui/core/Select"
+import Select from "react-select"
 import Divider from '@material-ui/core/Divider'
 
 const styles = {
@@ -91,19 +91,12 @@ class SearchHeader extends React.Component {
 
                     </FormGroup>
                     <Select
-                            native
-                            style={styles.daySelect}
-                            value={this.props.day}
-                            onChange={this.props.handleDaysChange}
-                            >
-                            <option value="Mon">Monday</option>
-                            <option value="Tue">Tuesday</option>
-                            <option value="Wed">Wednesday</option>
-                            <option value="Thu">Thursday</option>
-                            <option value="Fri">Friday</option>
-                            <option value="Sat">Saturday</option>
-                            <option value="Sun">Sunday</option>
-                    </Select>
+                        native
+                        style={styles.daySelect}
+                        value={this.props.dayOption}
+                        onChange={this.props.handleDaysChange}
+                        options={this.props.dayOptions}
+                    />
                 </FormControl>
             </Toolbar>
         </AppBar>

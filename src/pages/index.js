@@ -11,6 +11,17 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
+const dayOptions = [
+    { value: "Mon", label: "Monday"},
+     {value: "Tue", label: "Tuesday"},
+     {value: "Wed", label: "Wednesday"},
+     { value: "Thu", label: "Thursday"},
+     {value: "Fri", label: "Friday"},
+     { value: "Sat", label: "Saturday"},
+     {value: "Sun", label: "Sunday"},
+     { value: "Any", label: "Any Day"}
+ ];
+
 function getCurrentDay() {
     const d = new Date();
     const dayNum = d.getDay();
@@ -27,34 +38,45 @@ function getCurrentDay() {
     }
 
     let dayStr;
+    let dayLabel;
     switch (dayNum) {
         case 0:
             dayStr = "Sun";
+            dayLabel = "Sunday";
             break;
         case 1:
             dayStr = "Mon";
+            dayLabel = "Monday";
             break;
         case 2:
             dayStr = "Tue";
+            dayLabel = "Tuesday";
             break;
         case 3:
             dayStr = "Wed";
+            dayLabel = "Wednesday";
             break;
         case 4:
             dayStr = "Thu";
+            dayLabel = "Thursday";
             break;
         case 5:
             dayStr = "Fri";
+            dayLabel = "Friday";
             break;
         case 6:
             dayStr = "Sat";
+            dayLabel = "Saturday";
             break;
         default:
             console.log("Unknown day number " + dayNum);
             dayStr = "Mon";
+            dayLabel = "Monday";
     }
-    return dayStr;
+    return { value: dayStr, label: dayLabel };
 }
+
+
 
 class IndexPage extends React.Component {
     state = {
@@ -64,7 +86,8 @@ class IndexPage extends React.Component {
         drinks: true,
         food: true,
         events: true,
-        day: getCurrentDay()
+        day: getCurrentDay().value,
+        dayOption: getCurrentDay()
     };
 
     searchOnChange = event => {
@@ -117,9 +140,9 @@ class IndexPage extends React.Component {
         this.setState({ events: event.target.checked });
     }
 
-    handleDaysChange = (event) => {
+    handleDaysChange = (selectedOption) => {
         console.log("Updating day")
-        this.setState({ day: event.target.value });
+        this.setState({ day: selectedOption.value, dayOption: selectedOption });
     }
 
   render() {
@@ -156,9 +179,11 @@ class IndexPage extends React.Component {
                 handleEvents={this.handleEventsChange}
                 handleDaysChange={this.handleDaysChange}
                 day={this.state.day}
+                dayOption={this.state.dayOption}
                 food={this.state.food}
                 drinks={this.state.drinks}
                 events={this.state.events}
+                dayOptions={dayOptions}
             />
             <div
             style={{
