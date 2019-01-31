@@ -11,7 +11,7 @@ import FormControl from '@material-ui/core/FormControl'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormHelperText from '@material-ui/core/FormHelperText'
-import Select from "react-select"
+import Select, { components } from "react-select"
 import Divider from '@material-ui/core/Divider'
 
 const styles = {
@@ -20,6 +20,7 @@ const styles = {
     },
     toolbar: {
         width: "100%",
+        justifyContent: "center"
     },
     searchInput: {
         width: "75%",
@@ -39,24 +40,55 @@ const styles = {
         maxWidth: "400px",
         marginTop: "2%"
     },
-    daySelect: {
-        minWidth: `25%`,
-        marginLeft: `5%`,
-        marginTop: 0
+    selectComponent: {
+        position: "relative",
+        width: "92%",
+        maxWidth: "400px"
+    },
+    control: {
+        position: "relative",
+        width: "100%"
     }
 };
 
+function shimLocationOptions(locations) {
+    let options = [];
+    for (let i in locations) {
+        let o = { value: locations[i].fields.slug, label: locations[i].name }
+        options.push(o);
+    }
+    console.log("O: " + JSON.stringify(options));
+    return options;
+}
+
+const selectComponent = (props) => (
+    <div style={styles.selectComponent}>
+        <components.Control {...props} />
+    </div>
+)
+
+const controlComponent = (props) => (
+    <div style={styles.control}>
+        <components.Control {...props} />
+    </div>
+)
+
 class SearchHeader extends React.Component {
+    // TODO: combine location names & keywords here for autosuggestion
     render() {
         return (
       <div>
         <AppBar style={styles.appBar} position="static">
             <Toolbar style={styles.toolbar}>
-                <Paper style={styles.paper} elevation={1}>
-                    <InputBase style={styles.searchInput} placeholder="try 'wings' or 'shots'..." onChange={this.props.searchOnChange} onKeyPress={this.props.handleKeyPress}/>
-                    <Divider style={styles.divider} />
-                    <IconButton onClick={this.props.handleSearch}><SearchIcon /></IconButton>
-                </Paper>
+                    <Select style={{ position: "relative", width: "421px"}}
+                        components={{Control: controlComponent, SelectContainer: selectComponent }}
+                        options={shimLocationOptions(this.props.locations)}
+                        value={this.props.search}
+                        onChange={this.props.handleSearchChange}
+                        onKeyDown={this.props.onKeyDown}
+                        placeholder="Search locations or phrases"
+                        isClearable
+                    />
             </Toolbar>
             <Toolbar style={styles.toolbar}>
                 <FormControl component="fieldset">
@@ -92,7 +124,6 @@ class SearchHeader extends React.Component {
                     </FormGroup>
                     <Select
                         native
-                        style={styles.daySelect}
                         value={this.props.dayOption}
                         onChange={this.props.handleDaysChange}
                         options={this.props.dayOptions}

@@ -145,6 +145,20 @@ class IndexPage extends React.Component {
         this.setState({ day: selectedOption.value, dayOption: selectedOption });
     }
 
+    handleSearchChange = (selectedOption) => {
+        console.log("updating search input")
+        this.setState({ search: selectedOption })
+    }
+
+    onSearchKeyDown = (event) => {
+        const key = event.key;
+        const inputValue = event.target.value;
+        if (key === "Enter") {
+            console.log("Pressed enter");
+            console.log(event.target.value);
+        }
+    }
+
   render() {
       console.log(this.state);
     return (
@@ -184,6 +198,10 @@ class IndexPage extends React.Component {
                 drinks={this.state.drinks}
                 events={this.state.events}
                 dayOptions={dayOptions}
+                locations={data.allDataYaml.edges.map(e => e.node)}
+                handleSearchChange={this.handleSearchChange}
+                search={this.state.search}
+                onKeyDown={this.onSearchKeyDown}
             />
             <div
             style={{
