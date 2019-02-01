@@ -6,6 +6,8 @@ import CardContent from "@material-ui/core/CardContent"
 import Header from "../components/header"
 import Layout from "../components/layout"
 import DealsContainer from "../components/dealsContainer"
+import WebsiteButton from "../components/websiteButton"
+import YelpButton from "../components/yelpButton"
 
 const styles = {
   div: {
@@ -32,6 +34,7 @@ function notNullOrUndefined(obj) {
 
 export default ({ data }) => {
   const location = data.dataYaml
+  console.log(JSON.stringify(location))
   return (
     <Layout>
       <Header title={location.name} />
@@ -43,13 +46,17 @@ export default ({ data }) => {
               <p style={styles.info}>{location.displayAddress}</p>
             )}
             {notNullOrUndefined(location.phoneNumber) && (
-              <p style={styles.info}>Phone: {location.phoneNumber}</p>
+              <p style={styles.info}>{location.phoneNumber}</p>
             )}
             {notNullOrUndefined(location.website) && (
-              <p style={styles.info}>Site: {location.website}</p>
+            <WebsiteButton
+                link={location.website}
+            />
             )}
             {notNullOrUndefined(location.yelpLink) && (
-              <p style={styles.info}>Yelp: {location.yelpLink}</p>
+              <YelpButton
+                link={location.yelpLink}
+              />
             )}
             <DealsContainer deals={location.deals} />
           </CardContent>

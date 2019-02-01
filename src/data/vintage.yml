@@ -31,7 +31,7 @@ deals:
     types:
       - Events
 
-  - description: Tacos - $2 chicken or beef, $2.50 fish 3-`10pm
+  - description: Tacos - $2 chicken or beef, $2.50 fish 3-10pm
     days:
       - Thu
     types:

@@ -3,7 +3,7 @@ campusSlug: uw-madison
 displayAddress: 320 N Randall Ave, Madison,WI 53715
 phoneNumber: 608-251-1200
 website: https://www.librarycafeandbar.com/
-yelplink: https://www.yelp.com/biz/the-library-cafe-and-bar-madison
+yelpLink: https://www.yelp.com/biz/the-library-cafe-and-bar-madison
 deals:
   - description: Happy Hour - $2.50 rail mixers, $2.25 domestics from 4-7pm
     days:

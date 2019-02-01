@@ -3,7 +3,7 @@ campusSlug: uw-madison
 displayAddress: 1313 Regent Street, Madison,WI 53715
 phoneNumber: 608-250-8989
 website: http://luckys1313.com/
-yelplink: https://www.yelp.com/biz/luckys-1313-brew-pub-madison-2
+yelpLink: https://www.yelp.com/biz/luckys-1313-brew-pub-madison-2
 deals:
   - description: Lucky's hour, 2-4-1 rail mixers 11pm-1am
     days:

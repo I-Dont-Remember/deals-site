@@ -31,8 +31,8 @@ module.exports = {
         name: `Deals On Tap`,
         short_name: `DoT`,
         start_url: `/`,
-        background_color: `#e8894a`,
-        theme_color: `#e8894a`,
+        background_color: `#f9060e`,
+        theme_color: `#f9060e`,
         display: `minimal-ui`,
         icon: `src/images/beer-tap.png`, // This path is relative to the root of the site.
       },
@@ -44,7 +44,7 @@ module.exports = {
         resolve:  `@wapps/gatsby-plugin-material-ui`,
         options: {
             theme: {
-                primaryColor: '#e8894a',
+                primaryColor: '#f9060e',
             },
         },
     }

@@ -40,11 +40,14 @@ const styles = {
     marginTop: "2%",
   },
   selectComponent: {
+    color: "black",
     position: "relative",
     width: "60%",
     maxWidth: "300px",
   },
-  daySelect: {},
+  daySelect: {
+      color: "black"
+  },
   control: {
     position: "relative",
     width: "100%",
