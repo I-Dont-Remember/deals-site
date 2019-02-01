@@ -190,6 +190,7 @@ class SearchHeader extends React.Component {
                       Control: controlComponent,
                       SelectContainer: daySelectComponent,
                     }}
+                    isSearchable={false}
                   />
                 </FormControl>
               </FormGroup>
