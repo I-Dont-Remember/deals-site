@@ -42,18 +42,18 @@ export default ({ data }) => {
         <Card>
           <CardContent>
             <h3>{location.name}</h3>
-            {notNullOrUndefined(location.displayAddress) && (
+            {!!location.displayAddress && (
               <p style={styles.info}>{location.displayAddress}</p>
             )}
-            {notNullOrUndefined(location.phoneNumber) && (
+            {!!location.phoneNumber && (
               <p style={styles.info}>{location.phoneNumber}</p>
             )}
-            {notNullOrUndefined(location.website) && (
+            {!!location.website && (
             <WebsiteButton
                 link={location.website}
             />
             )}
-            {notNullOrUndefined(location.yelpLink) && (
+            {!!location.yelpLink && (
               <YelpButton
                 link={location.yelpLink}
               />

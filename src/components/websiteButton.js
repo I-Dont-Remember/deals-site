@@ -3,7 +3,8 @@ import Button from '@material-ui/core/Button'
 
 const styles = {
     button: {
-        marginTop: "12px"
+        marginTop: "10px",
+        marginLeft: "8px"
     }
 }
 
@@ -14,16 +15,14 @@ class WebsiteButton extends React.Component {
 
     render() {
         return (
-            <div>
-                <Button
-                    style={styles.button}
-                    variant="contained"
-                    color="grey"
-                    onClick={this.onClick}
-                >
-                Website
-                </Button>
-            </div>
+            <Button
+                style={styles.button}
+                variant="contained"
+                color="grey"
+                onClick={this.onClick}
+            >
+            Website
+            </Button>
     )
     }
 }

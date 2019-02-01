@@ -16,8 +16,10 @@ import Divider from "@material-ui/core/Divider"
 const styles = {
   appBar: {
     padding: "6px",
+    alignItems: "center"
   },
   toolbar: {
+    maxWidth: "600px",
     width: "100%",
     justifyContent: "center",
   },
@@ -53,16 +55,19 @@ const styles = {
     width: "100%",
   },
   formLabel: {
-    marginRight: "8px",
+    margin: "0",
+    flex: 1
   },
   checkbox: {
-    color: "white",
+    color: "white"
   },
   formSelect: {
+    marginTop: "8px",
     width: "40%",
+    flex: 3
   },
   formControl: {
-    width: "100%",
+    width: "100%"
   },
   formGroup: {
     justifyContent: "center",
