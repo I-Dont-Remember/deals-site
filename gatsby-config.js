@@ -29,7 +29,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Deals On Tap`,
-        short_name: `DoT`,
+        short_name: `DealsOnTap`,
         start_url: `/`,
         background_color: `#f9060e`,
         theme_color: `#f9060e`,

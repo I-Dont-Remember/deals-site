@@ -9,7 +9,7 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core"
 const theme = createMuiTheme({
   palette: {
     type: "light", // can change to dark theme easily
-    primary: { main: "#f9060e" },
+    primary: { main: "#c7050c" },
     secondary: { main: "#fff" },
   },
   // this removes the typography deprecation warnings cuz using v2 goodies
