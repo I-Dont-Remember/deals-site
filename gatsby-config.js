@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Deals On Tap`,
-    description: `Deals. Now.`,
+    description: `Bar deals in the Madison area`,
     author: `kpquinn2@wisc.edu`,
     site_env: process.env.SITE_ENV
   },
@@ -47,6 +47,8 @@ module.exports = {
                 primaryColor: '#c7050c',
             },
         },
-    }
+    },
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-netlify-cache`
   ],
 }

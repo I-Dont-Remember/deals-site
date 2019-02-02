@@ -134,7 +134,7 @@ class SearchHeader extends React.Component {
               value={this.props.search}
               onChange={this.props.handleLocationSelectChange}
               onKeyDown={this.props.onKeyDown}
-              placeholder="view a location"
+              placeholder="See a bar's info.."
               isClearable
             />
             <Paper style={{ marginLeft: "5px" }}>
