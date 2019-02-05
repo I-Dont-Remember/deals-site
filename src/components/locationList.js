@@ -2,6 +2,7 @@ import React from "react"
 import LocationItem from "./locationItem"
 import List from "@material-ui/core/List"
 import CircularProgress from "@material-ui/core/CircularProgress"
+import Grid from '@material-ui/core/Grid'
 
 const styles = {
   progressDiv: {
@@ -10,6 +11,10 @@ const styles = {
     textAlign: "center",
   },
   circle: {},
+  empty: {
+      marginTop: "50%",
+      color: "#778899"
+  }
 }
 
 class LocationList extends React.Component {
@@ -64,22 +69,44 @@ class LocationList extends React.Component {
         </div>
       )
     }
-    return (
-      <List>
-        {edges.map(e => {
-          const validDeals = this.getValidDeals(e.node)
-          return (
-            validDeals.length > 0 && (
-              <LocationItem
-                key={e.node.name}
-                location={e.node}
-                validDeals={validDeals}
-              />
-            )
-          )
-        })}
-      </List>
-    )
+
+    let validLocations = [];
+    for (let i in edges) {
+        const e = edges[i];
+        const validDeals = this.getValidDeals(e.node);
+
+        if (validDeals.length > 0) {
+            validLocations.push({
+                edge: e,
+                validDeals: validDeals
+            })
+        }
+    }
+
+    console.log("len: " + validLocations.length);
+    if (validLocations.length > 0) {
+        return (
+            <List>
+                {
+                    validLocations.map(l => {
+                        return (<LocationItem
+                            key={l.edge.node.name}
+                            location={l.edge.node}
+                            validDeals={l.validDeals}
+                        />)
+                    })
+                }
+            </List>
+        )
+    } else {
+        return (
+            <Grid container justify="center" style={styles.empty}>
+                <div style={{ maxWidth: "50%"}}>
+                    Nothing found on {this.props.day}.
+                </div>
+            </Grid>
+        )
+    }
   }
 }
 
