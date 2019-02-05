@@ -164,6 +164,11 @@ class IndexPage extends React.Component {
     }
   }
 
+  handleClear = () => {
+    document.getElementById("search-input").value = "";
+    this.setState({ searchTerm: ""})
+  }   
+
   render() {
     return (
       <StaticQuery
@@ -208,6 +213,7 @@ class IndexPage extends React.Component {
               search={this.state.search}
               onKeyDown={this.onLocationKeyDown}
               handleLocation={this.handleLocationButton}
+              handleClear={this.handleClear}
             />
             <div
               style={{

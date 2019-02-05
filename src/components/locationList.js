@@ -83,7 +83,6 @@ class LocationList extends React.Component {
         }
     }
 
-    console.log("len: " + validLocations.length);
     if (validLocations.length > 0) {
         return (
             <List>

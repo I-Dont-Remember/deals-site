@@ -3,7 +3,8 @@ import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import SearchIcon from "@material-ui/icons/Search"
 import NearMe from "@material-ui/icons/NearMe"
-import InputBase from "@material-ui/core/InputBase"
+import Close from "@material-ui/icons/Close"
+import Input from "@material-ui/core/Input"
 import IconButton from "@material-ui/core/IconButton"
 import Paper from "@material-ui/core/Paper"
 import Checkbox from "@material-ui/core/Checkbox"
@@ -12,6 +13,9 @@ import FormGroup from "@material-ui/core/FormGroup"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import Select, { components } from "react-select"
 import Divider from "@material-ui/core/Divider"
+import { InputAdornment } from "@material-ui/core";
+
+const inputId = "search-input";
 
 const styles = {
   appBar: {
@@ -103,7 +107,10 @@ const daySelectComponent = props => (
     <components.Control {...props} />
   </div>
 )
+
+
 class SearchHeader extends React.Component {
+
   // TODO: combine location names & keywords here for autosuggestion
   render() {
     return (
@@ -111,11 +118,21 @@ class SearchHeader extends React.Component {
         <AppBar style={styles.appBar} position="static">
           <Toolbar style={styles.toolbar}>
             <Paper style={styles.paper} elevation={1}>
-              <InputBase
+              <Input
+                id={inputId}
                 style={styles.searchInput}
-                placeholder="keyword search, try 'shots'..."
+                placeholder="search a word..."
                 onChange={this.props.searchOnChange}
                 onKeyPress={this.props.handleKeyPress}
+                endAdornment={
+                    <InputAdornment>
+                        <IconButton
+                            onClick={this.props.handleClear}
+                        >
+                            <Close />
+                        </IconButton>
+                    </InputAdornment>
+                }
               />
               <Divider style={styles.divider} />
               <IconButton onClick={this.props.handleSearch}>
