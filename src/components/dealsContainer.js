@@ -7,6 +7,7 @@ import ListItem from "@material-ui/core/ListItem"
 import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import AppBar from '@material-ui/core/AppBar'
+import SwipeableViews from "react-swipeable-views"
 
 const splitDealsByDay = (deals) => {
     let days = {};
@@ -104,13 +105,18 @@ class DealsContainer extends React.Component {
                 <Tab label="Sa" />
             </Tabs>
         </AppBar>
-            {value === 0 && <DayTab deals={sortedDeals["sun"]} />}
-            {value === 1 && <DayTab deals={sortedDeals["mon"]} />}
-            {value === 2 && <DayTab deals={sortedDeals["tue"]} />}
-            {value === 3 && <DayTab deals={sortedDeals["wed"]} />}
-            {value === 4 && <DayTab deals={sortedDeals["thu"]} />}
-            {value === 5 && <DayTab deals={sortedDeals["fri"]} />}
-            {value === 6 && <DayTab deals={sortedDeals["sat"]} />}
+        <SwipeableViews
+            index={this.state.value}
+            onChangeIndex={this.handleChangeIndex}
+        >
+            <DayTab deals={sortedDeals["sun"]} />
+            <DayTab deals={sortedDeals["mon"]} />
+            <DayTab deals={sortedDeals["tue"]} />
+            <DayTab deals={sortedDeals["wed"]} />
+            <DayTab deals={sortedDeals["thu"]} />
+            <DayTab deals={sortedDeals["fri"]} />
+            <DayTab deals={sortedDeals["sat"]} />
+        </SwipeableViews>
         </div>
     )
   }
