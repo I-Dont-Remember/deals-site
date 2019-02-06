@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, navigate } from "gatsby"
 
 import "./layout.css"
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core"
@@ -16,7 +16,7 @@ const theme = createMuiTheme({
   typography: { useNextVariants: true },
 })
 
-const Layout = ({ children }) => (
+const Layout = ({ children, page }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -29,7 +29,9 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+        <MuiThemeProvider theme={theme}>
+            {children}
+        </MuiThemeProvider>
       </>
     )}
   />

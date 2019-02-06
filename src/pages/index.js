@@ -1,5 +1,6 @@
 import React from "react"
 
+import BottomNav from "../components/bottomNav"
 import SearchHeader from "../components/searchHeader"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -195,7 +196,7 @@ class IndexPage extends React.Component {
         `}
       >
         {data => (
-          <Layout>
+          <Layout page={0}>
             <SearchHeader
               handleSearch={this.handleSearch}
               searchOnChange={this.searchOnChange}
@@ -236,6 +237,7 @@ class IndexPage extends React.Component {
                 events={this.state.events}
               />
             </div>
+            <BottomNav page={0} />
           </Layout>
         )}
       </StaticQuery>

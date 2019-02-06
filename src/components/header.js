@@ -18,6 +18,15 @@ class Header extends React.Component {
   }
 
   render() {
+
+    if (this.props.noButton) {
+        return (
+            <AppBar position="static">
+                <Toolbar style={styles.toolbar} />
+            </AppBar>
+        )
+    }
+
     return (
       <div>
         <AppBar position="static">
