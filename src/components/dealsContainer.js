@@ -1,42 +1,117 @@
 import React from "react"
+import PropTypes from 'prop-types'
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
+import Tab from '@material-ui/core/Tab'
+import Tabs from '@material-ui/core/Tabs'
+import AppBar from '@material-ui/core/AppBar'
 
-// splitDealsByDay() = (deals) => {
-//     let days = {};
-//     deals.forEach(deal => {
-//         deal.days.forEach(day => {
-//             if (typeof days[day] !== "undefined" && days[day]) {
-//                 days[day].push(deal)
-//             }
-//         })
-//     });
-// }
+const splitDealsByDay = (deals) => {
+    let days = {};
+    deals.forEach(deal => {
+        deal.days.forEach(d => {
+            const day = d.toLowerCase();
+            if (!!days[day]) {
+                days[day].push(deal)
+            } else {
+                // add a fresh day
+                days[day] = [deal]
+            }
+        })
+    });
+
+    return days;
+}
+
+const styles = {
+    div: {
+        marginTop: "10%"
+    },
+    content: {
+        marginTop: "5%"
+    },
+    empty: {
+        color: "#778899"
+    }
+}
+
+class DayTab extends React.Component {
+    render() {      
+        return (
+        <Card style={styles.card}>
+            <CardContent style={styles.content}>
+            {
+                (!! this.props.deals) 
+                ? (<ul>
+                        {
+                            this.props.deals.map(d => {
+                            return (
+                                <li key={d.description}>{d.description}</li>
+                            )
+                            })
+                        }
+                    </ul>)
+                : (<div style={styles.empty}>Nothing for now...</div>)
+            }
+            </CardContent>
+        </Card>
+
+        )
+    }
+}
 
 class DealsContainer extends React.Component {
+    state = {
+        value: 0
+    }
+
+  handleChange = (event, value) => {
+    console.log("value change: " + value);
+    this.setState({ value: value});
+  }
+
+  handleChangeIndex = index => {
+      console.log("index change : " + index);
+      this.setState({ value: index });
+  }
+
   render() {
+    // TODO: disable tab if no deals available for that day
     const deals = this.props.deals
+    const { value } = this.state;
+
+    const sortedDeals = splitDealsByDay(this.props.deals);
 
     return (
-      <Card
-        style={{
-          backgroundColor: `#f3f3f3`,
-          margin: `2em`,
-          boxShadow: `8px 8px 5px 0px #888888`,
-        }}
-      >
-        <CardContent>
-          <List>
-            {deals.map(d => (
-              <ListItem key={d.description}>
-                {d.days}: {d.description}
-              </ListItem>
-            ))}
-          </List>
-        </CardContent>
-      </Card>
+        <div style={styles.div}>
+        <AppBar color="secondary" position="static">
+            <Tabs 
+                value={this.state.value}
+                onChange={this.handleChange}
+                indicatorColor="primary"
+                textColor="primary"    
+                variant="scrollable"
+                scrollButtons="auto"
+            >
+                <Tab label="Su" />
+                <Tab label="M" />
+                <Tab label="Tu" />
+                <Tab label="W" />
+                <Tab label="Th" />
+                <Tab label="F" />
+                <Tab label="Sa" />
+            </Tabs>
+        </AppBar>
+            {value === 0 && <DayTab deals={sortedDeals["sun"]} />}
+            {value === 1 && <DayTab deals={sortedDeals["mon"]} />}
+            {value === 2 && <DayTab deals={sortedDeals["tue"]} />}
+            {value === 3 && <DayTab deals={sortedDeals["wed"]} />}
+            {value === 4 && <DayTab deals={sortedDeals["thu"]} />}
+            {value === 5 && <DayTab deals={sortedDeals["fri"]} />}
+            {value === 6 && <DayTab deals={sortedDeals["sat"]} />}
+        </div>
     )
   }
 }

@@ -34,6 +34,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "GATSBY_ENV=local npm run develop",
+    "start-wifi": "GATSBY_ENV=local gatsby develop --host 0.0.0.0",
     "dev-start": "GATSBY_ENV=dev npm run develop",
     "serve": "GATSBY_ENV=local npm run build && gatsby serve",
     "dev-serve": "GATSBY_ENV=dev npm run build && gatsby serve",

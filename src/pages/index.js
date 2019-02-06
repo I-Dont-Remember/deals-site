@@ -144,7 +144,9 @@ class IndexPage extends React.Component {
   }
 
   handleLocationSelectChange = selectedOption => {
-    this.setState({ locationOption: selectedOption })
+    this.setState({ locationOption: selectedOption });
+    console.log("--> " + selectedOption);
+    navigate(selectedOption.value)
   }
 
   onLocationKeyDown = event => {

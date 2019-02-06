@@ -18,7 +18,7 @@ class WebsiteButton extends React.Component {
             <Button
                 style={styles.button}
                 variant="contained"
-                color="grey"
+                color="inherit"
                 onClick={this.onClick}
             >
             Website
