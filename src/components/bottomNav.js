@@ -4,11 +4,12 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import { navigate } from "gatsby"
 
 import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 const styles = {
     nav: {
+        bottom: 0,
+        position: "fixed",
+        width: "100%"
     }
 }
 
@@ -30,6 +31,7 @@ class BottomNav extends React.Component {
 
     render() {
         return (
+        <div>
         <BottomNavigation
             style={styles.nav}
             value={this.props.page}
@@ -40,6 +42,7 @@ class BottomNav extends React.Component {
             <BottomNavigationAction label="locations" icon={<RestoreIcon />} />
             <BottomNavigationAction label="info" icon={<RestoreIcon />} />
         </BottomNavigation>
+        </div>
         )
     }
 }

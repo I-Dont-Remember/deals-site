@@ -1,13 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
-
 import Header from "../components/header"
 import Layout from "../components/layout"
-import DealsContainer from "../components/dealsContainer"
-import WebsiteButton from "../components/websiteButton"
-import YelpButton from "../components/yelpButton"
 import BottomNav from "../components/bottomNav"
 
 const styles = {
@@ -27,11 +20,11 @@ export default ({ data }) => {
 
   return (
     <Layout page={1}>
-      <Header noButton />
-      <div style={styles.div}>
-        <h1>locations page</h1>
-      </div>
-      <BottomNav page={1} />
+        <Header noButton />
+        <div style={styles.div}>
+            <h1>locations page</h1>
+        </div>
+        <BottomNav page={1} />
     </Layout>
   )
 }
