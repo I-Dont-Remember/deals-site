@@ -1,14 +1,13 @@
 import React from "react"
-import { graphql } from "gatsby"
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
 
 import Header from "../components/header"
 import Layout from "../components/layout"
-import DealsContainer from "../components/dealsContainer"
-import WebsiteButton from "../components/websiteButton"
-import YelpButton from "../components/yelpButton"
 import BottomNav from "../components/bottomNav"
+
+import TextField from '@material-ui/core/TextField'
+import Grid from "@material-ui/core/Grid"
+import Paper from "@material-ui/core/Paper"
+import Button from "@material-ui/core/Button"
 
 const styles = {
   div: {
@@ -20,6 +19,17 @@ const styles = {
   info: {
     marginBottom: `5px`,
   },
+  form: {
+      width: "90%",
+      maxWidth: "400px",
+  },
+  multiline: {
+      width: "100%"
+  },
+  button: {
+      marginTop: "5%",
+      marginBottom: "15%",
+  }
 }
 
 
@@ -29,25 +39,41 @@ export default ({ data }) => {
     <Layout page={2}>
       <Header title={"Info"} noButton />
       <div style={styles.div}>
-        <h1>Info page</h1>
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+      >
+        <h1>Deals On Tap</h1>
+        <p>Deals On Tap is here to make finding deals at your favorite bars
+            as easy as possible.  We're adding more features all the time, so
+            come back soon!
+        </p>
+        <br />
+        <h4>Are we missing deals? Thought of a cool feature we need? Contact us with the form below.</h4>
+        <form 
+            style={styles.form}
+            action="https://formspree.io/kpquinn2@wisc.edu"
+            method="POST"
+        >
+        <Paper>
+        <TextField
+            name="feedback"
+            type="text"
+            style={styles.multiline}
+            label="Feedback"
+            multiline
+            variant="outlined"
+        />    
+        </Paper>
+        <Button type="submit" label="Submit" style={styles.button} variant="contained" color="primary">
+            Submit
+        </Button>
+        </form>
+      </Grid>
       </div>
       <BottomNav page={2} />
     </Layout>
   )
 }
-
-// export const query = graphql`
-//   query($slug: String!) {
-//     dataYaml(fields: { slug: { eq: $slug } }) {
-//       name
-//       displayAddress
-//       phoneNumber
-//       website
-//       yelpLink
-//       deals {
-//         description
-//         days
-//       }
-//     }
-//   }
-// `
