@@ -27,7 +27,7 @@ export default ({ data }) => {
 
   return (
     <Layout page={2}>
-      <Header noButton />
+      <Header title={"Info"} noButton />
       <div style={styles.div}>
         <h1>Info page</h1>
       </div>

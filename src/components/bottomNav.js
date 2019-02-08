@@ -3,7 +3,9 @@ import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import { navigate } from "gatsby"
 
-import RestoreIcon from '@material-ui/icons/Restore';
+import InfoOutlined from "@material-ui/icons/InfoOutlined"
+import PlaceOutlined from "@material-ui/icons/PlaceOutlined"
+import LocalBarOutlined from "@material-ui/icons/LocalBarOutlined"
 
 const styles = {
     nav: {
@@ -38,9 +40,9 @@ class BottomNav extends React.Component {
             onChange={handleChange}
             showLabels
         >
-            <BottomNavigationAction label="deals" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="locations" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="info" icon={<RestoreIcon />} />
+            <BottomNavigationAction label="deals" icon={<LocalBarOutlined />} />
+            <BottomNavigationAction label="bars" icon={<PlaceOutlined />} />
+            <BottomNavigationAction label="info" icon={<InfoOutlined />} />
         </BottomNavigation>
         </div>
         )

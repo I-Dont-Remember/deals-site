@@ -66,7 +66,7 @@ const styles = {
     color: "white"
   },
   formSelect: {
-    marginTop: "8px",
+    marginTop: "15px",
     width: "40%",
     flex: 3
   },
@@ -108,7 +108,6 @@ const daySelectComponent = props => (
   </div>
 )
 
-
 class SearchHeader extends React.Component {
 
   // TODO: combine location names & keywords here for autosuggestion
@@ -137,29 +136,6 @@ class SearchHeader extends React.Component {
               <Divider style={styles.divider} />
               <IconButton onClick={this.props.handleSearch}>
                 <SearchIcon />
-              </IconButton>
-            </Paper>
-          </Toolbar>
-          <Toolbar style={styles.toolbar}>
-            <Select
-              style={{ position: "relative", width: "421px" }}
-              components={{
-                Control: controlComponent,
-                SelectContainer: selectComponent,
-              }}
-              options={shimLocationOptions(this.props.locations)}
-              value={this.props.search}
-              onChange={this.props.handleLocationSelectChange}
-              onKeyDown={this.props.onKeyDown}
-              placeholder="See a bar's info.."
-              isClearable
-            />
-            <Paper style={{ marginLeft: "5px" }}>
-              <IconButton
-                style={styles.locationButton}
-                onClick={this.props.handleLocation}
-              >
-                <NearMe />
               </IconButton>
             </Paper>
           </Toolbar>

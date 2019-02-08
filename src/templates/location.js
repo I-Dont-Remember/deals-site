@@ -37,7 +37,7 @@ export default ({ data }) => {
   console.log(JSON.stringify(location))
   return (
     <Layout>
-      <Header title={location.name} />
+      <Header />
       <div style={styles.div}>
         <Card>
           <CardContent>

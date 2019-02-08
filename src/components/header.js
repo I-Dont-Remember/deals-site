@@ -10,19 +10,28 @@ const styles = {
     paddingLeft: `5px`,
   },
   backButton: {},
+  title: {
+    marginTop: "2%",
+    marginBottom: "2%",
+    marginLeft: "3%",
+    fontSize: "40px"
+  }
 }
 
 class Header extends React.Component {
   handleBack = function() {
-    navigate("/")
+    navigate("/locations/");
   }
 
   render() {
+    console.log(this.props)
 
     if (this.props.noButton) {
         return (
             <AppBar position="static">
-                <Toolbar style={styles.toolbar} />
+                {this.props.title
+                    ?(<h3 style={styles.title}>{this.props.title}</h3>)
+                    :(<Toolbar style={styles.toolbar} />)}
             </AppBar>
         )
     }
