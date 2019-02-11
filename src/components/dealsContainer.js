@@ -11,6 +11,9 @@ import SwipeableViews from "react-swipeable-views"
 
 const splitDealsByDay = (deals) => {
     let days = {};
+    if (!deals) {
+        return days;
+    }
     deals.forEach(deal => {
         deal.days.forEach(d => {
             const day = d.toLowerCase();
