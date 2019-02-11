@@ -1,0 +1,116 @@
+name: Wando's Bar & Grill
+campusSlug: uw-madison
+displayAddress: 602 University Ave, Madison,WI 53703
+phoneNumber: 608-256-5204
+website: http://wandosbar.com/
+yelpLink: https://www.yelp.com/biz/wandos-madison
+deals:
+  - description: $2.50 Domestic Taps
+    days: 
+      - Mon
+    types:
+      - Drinks
+
+  - description: $3.50 Craft Taps
+    days: 
+      - Mon
+    types:
+      - Drinks
+
+  - description: $4 Double Rail Mixers
+    days: 
+      - Mon
+    types:
+      - Drinks
+
+  - description: $2.50 Fireball Shots
+    days: 
+      - Mon
+    types:
+      - Drinks
+
+  - description: $1.50 Miller Lite, Coors Light, and PBR cans
+    days:
+      - Tue
+    types:
+      - Drinks
+
+  - description: $2 Tequila shots
+    days:
+      - Tue
+    types:
+      - Drinks
+
+  - description: 2-4-5 Bombs
+    days:
+      - Tue
+    types:
+      - Drinks
+
+  - description: $4 Double Rail Mixers
+    days:
+      - Tue
+    types:
+      - Drinks
+
+  - description: FREE Bacon!!
+    days:
+      - Tue
+    types:
+      - Food
+
+  - description: $3 Spotted Cow Taps
+    days:
+      - Wed
+    types:
+      - Drinks
+
+  - description: $2.50 Fireball Shots
+    days:
+      - Wed
+    types:
+      - Drinks
+
+
+  - description: 1/2 priced Fishbowls
+    days:
+      - Wed
+    types:
+      - Drinks
+
+  - description: $7 Fishbowl pitchers
+    days:
+      - Thu
+    types:
+      - Drinks
+  
+  - description: $10 Captain Morgan pitchers
+    days:
+      - Thu
+    types:
+      - Drinks
+
+  - description: $11 Jack Daniels pitchers
+    days:
+      - Thu
+    type:
+      - Drinks
+
+  - description: $4 Mini pitchers of Miller Lite or Coors Light
+    days:
+      - Thu
+    type:
+      - Drinks
+
+  - description: $7 jumbo vodka Red Bull mixers
+    days:
+      - Fri
+    type:
+      - Drinks
+
+  - description: Friday Fish Fry!
+    days:
+      - Fri
+    type:
+      - Food
+
