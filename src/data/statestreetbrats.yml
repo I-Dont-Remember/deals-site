@@ -1,0 +1,72 @@
+name: State Street Brats
+campusSlug: uw-madison
+displayAddress: 603 State St, Madison,WI 53703
+phoneNumber: 608-255-5544
+website: https://statestreetbrats.com/
+yelpLink: https://www.yelp.com/biz/state-street-brats-madison
+deals:
+  - description: Tito's, Morgan, & Death's Door - $5 single, $7 double, $10 pitchers
+    days:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+      - Sun
+    types:
+        - Drinks
+
+  - description: $3 Vegas Bombs
+    days:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+      - Sun
+    types:
+        - Drinks
+
+  - description: $3 pints, $9 pitchers of High Life
+    days:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+      - Sun
+    types:
+        - Drinks
+
+  - description: $3 tallboys
+    days:
+      - Mon
+    types:
+      - Drinks  
+
+  - description: Free darts
+    days:
+      - Tue
+    types:
+      - Events
+
+  - description: Trivia Night @ 7:30pm
+    days:
+      - Wed
+    types:
+      - Events
+
+  - description: $1 rail mixers, mixed shots, & High Life 9pm - close
+    days:
+      - Thu
+    types:
+      - Drinks
+
+  - description: $5 all appetizers
+    days:
+      - Sun
+    types:
+      - Food
