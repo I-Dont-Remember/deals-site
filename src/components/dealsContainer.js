@@ -8,6 +8,7 @@ import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import AppBar from '@material-ui/core/AppBar'
 import SwipeableViews from "react-swipeable-views"
+const utils = require("../utils");
 
 const splitDealsByDay = (deals) => {
     let days = {};
@@ -71,7 +72,7 @@ class DayTab extends React.Component {
 
 class DealsContainer extends React.Component {
     state = {
-        value: 0
+        value: utils.getDayNum()
     }
 
   handleChange = (event, value) => {
