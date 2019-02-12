@@ -6,6 +6,7 @@ import Select, { components } from "react-select"
 import { navigate, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Grid from "@material-ui/core/Grid"
+import LocationCard from "../components/locationCard"
 
 const styles = {
   div: {
@@ -30,18 +31,23 @@ const styles = {
   },
   image: {
       opacity: "0.5",
-      marginTop: "45%"
+      marginTop: "35%"
   },
   grid: {
         height: "100%"
+  },
+  cardDiv: {
+      marginTop: "10%",
+      width: "95%",
+      maxWidth: "400px"
   }
 }
 
 function shimLocationOptions(locations) {
     let options = []
     for (let i in locations) {
-      let o = { value: locations[i].fields.slug, label: locations[i].name }
-      options.push(o)
+      let o = { value: locations[i], label: locations[i].name }
+      options.push(o);
     }
     return options
   }
@@ -61,20 +67,18 @@ const controlComponent = props => (
 class LocationsPage extends React.Component {
 
     state = {
-        location: null
+        option: null
     }
 
     handleLocationSelectChange = selectedOption => {
-        this.setState({ location: selectedOption });
-        console.log("--> " + selectedOption);
-        navigate(selectedOption.value)
+        this.setState({ option: selectedOption });
+        //navigate(selectedOption.value)
       }
 
     render() {
         const data = this.props.data;
-
-        const locations = shimLocationOptions(data.allDataYaml.edges.map(e => e.node));
-        console.log("l -" + JSON.stringify(locations));
+        const locations = data.allDataYaml.edges.map(e => e.node);
+        const locationOptions = shimLocationOptions(locations);
         return (
         <Layout page={1}>
             <Header title={"Bars"} noButton />
@@ -91,16 +95,24 @@ class LocationsPage extends React.Component {
                         Control: controlComponent,
                         SelectContainer: selectComponent,
                     }}
-                    options={locations}
-                    value={this.state.location}
+                    options={locationOptions}
+                    value={this.state.option}
                     onChange={this.handleLocationSelectChange}
                     placeholder="type a name..."
                     isClearable
                 />
-                <Img
+                {
+                !this.state.option
+                    ?<Img
                     style={styles.image}
                     fixed={data.file.childImageSharp.fixed}
-                />
+                    />
+                    :<div style={styles.cardDiv}>
+                        <LocationCard
+                            location={this.state.option.value}
+                        />
+                    </div>
+                }
             </Grid>
             </div>
             <BottomNav page={1} />
@@ -118,6 +130,14 @@ export const query = graphql`
             slug
             }
             name
+            displayAddress
+            phoneNumber
+            website
+            yelpLink
+            deals {
+                description
+                days
+            }
         }
         }
     }

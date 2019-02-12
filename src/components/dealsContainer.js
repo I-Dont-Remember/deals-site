@@ -38,6 +38,9 @@ const styles = {
     },
     empty: {
         color: "#778899"
+    },
+    card: {
+        marginTop: "2%"
     }
 }
 

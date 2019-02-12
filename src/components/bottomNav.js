@@ -40,9 +40,9 @@ class BottomNav extends React.Component {
             onChange={handleChange}
             showLabels
         >
-            <BottomNavigationAction label="deals" icon={<LocalBarOutlined />} />
-            <BottomNavigationAction label="bars" icon={<PlaceOutlined />} />
-            <BottomNavigationAction label="info" icon={<InfoOutlined />} />
+            <BottomNavigationAction label="Deals" icon={<LocalBarOutlined />} />
+            <BottomNavigationAction label="Bars" icon={<PlaceOutlined />} />
+            <BottomNavigationAction label="Info" icon={<InfoOutlined />} />
         </BottomNavigation>
         </div>
         )

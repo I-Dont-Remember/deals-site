@@ -20,7 +20,7 @@ const styles = {
 
 class Header extends React.Component {
   handleBack = function() {
-    navigate("/locations/");
+    navigate("/");
   }
 
   render() {
