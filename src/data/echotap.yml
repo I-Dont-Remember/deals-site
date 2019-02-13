@@ -1,0 +1,104 @@
+name: Echo Tap & Grill
+campusSlug: uw-madison
+displayAddress: 554 W Main St, Madison, WI 53703
+phoneNumber: 608-256-6928
+website: http://www.echotapmadison.com/
+yelpLink: https://www.yelp.com/biz/echo-tap-and-grill-madison
+deals:
+  - description: Trivia Night (Th 9pm, Sun 8pm)
+    time: (Th 9pm, Sun 8pm)
+    days:
+      - Sun
+      - Thu
+    types:
+      - Events
+
+  - description: $6 PBR pitchers
+    days:
+      - Mon
+    types:
+      - Drinks
+
+  - description: $5 appetizers
+    time: 4-7pm
+    days:
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+    types:
+      - Food
+
+  - description: $4 Irish Whiskey shots
+    days:
+      - Tue
+    types:
+      - Drinks
+
+  - description: $3 Founders All Day IPA pints
+    days:
+      - Tue
+    types:
+      - Drinks
+
+  - description: $5 glasses of wine
+    days:
+      - Wed
+    types:
+      - Drinks
+
+  - description: $3.50 pints of domestic microbrews
+    days:
+      - Wed
+    types:
+      - Drinks
+
+  - description: $4 double rail mixers
+    days:
+      - Thu
+      - Sat
+    types:
+      - Drinks
+  
+  - description: $12 pitchers of Ballast Point
+    days:
+      - Thu
+    types:
+      - Drinks
+
+  - description: $3 Leinenkugel products
+    days:
+      - Fri
+    types:
+      - Drinks
+
+  - description: $3.50 Fat Tire pints
+    days:
+      - Fri
+    types:
+      - Drinks
+
+  - description: $2.50 pints/$8 pitchers Miller Lite
+    days:
+      - Sat
+    types:
+      - Drinks
+
+  - description: $3 Jager shots
+    days:
+      - Sat
+    types:
+      - Drinks
+      
+  - description: Restaurant Hospitality Night - 50% off rails
+    days:
+      - Sun
+    types:
+      - Drinks
+
+  - description: $4 pints/$12 pitchers of Ballast Point
+    days:
+      - Sun
+    types:
+      - Drinks
