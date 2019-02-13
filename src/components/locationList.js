@@ -51,6 +51,10 @@ class LocationList extends React.Component {
     const term = this.props.searchTerm
     const deals = node.deals
 
+    if (!deals) {
+        return 0;
+    }
+
     const matches = deals.filter(deal => {
       const notFiltered = this.isNotFiltered(deal)
       return deal.description.indexOf(term) !== -1 && notFiltered

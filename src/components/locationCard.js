@@ -8,6 +8,10 @@ import YelpButton from "../components/yelpButton"
 const styles = {
     info: {
         marginBottom: `5px`
+    },
+    soonMsg: {
+        marginTop: "30px",
+        textAlign: "center"
     }
 }
 
@@ -34,7 +38,12 @@ class LocationCard extends React.Component {
                 link={location.yelpLink}
               />
             )}
-            <DealsContainer deals={location.deals} />
+            {!!location.deals
+                ?<DealsContainer deals={location.deals} />
+                :<div style={styles.soonMsg}>
+                    <p>Coming Soon!</p>
+                </div>
+            }
           </CardContent>
         </Card>
         )
