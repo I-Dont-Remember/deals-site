@@ -31,7 +31,7 @@ class LocationItem extends React.Component {
             <ul>
               {deals.map(d => (
                 <li key={d.description}>
-                  {d.description + " | " + d.types + " | " + d.days}
+                  {d.description + " | " + d.types}
                 </li>
               ))}
             </ul>
