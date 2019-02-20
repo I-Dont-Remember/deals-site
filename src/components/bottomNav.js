@@ -22,6 +22,9 @@ const handleChange = (event, value) => {
             navigate("/locations/");
             break;
         case 2:
+            navigate("/random/");
+            break;
+        case 3:
             navigate("/info/");
             break;
         default:
@@ -42,6 +45,7 @@ class BottomNav extends React.Component {
         >
             <BottomNavigationAction label="Deals" icon={<LocalBarOutlined />} />
             <BottomNavigationAction label="Bars" icon={<PlaceOutlined />} />
+            <BottomNavigationAction label="Random" icon={<InfoOutlined />} />
             <BottomNavigationAction label="Info" icon={<InfoOutlined />} />
         </BottomNavigation>
         </div>

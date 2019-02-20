@@ -36,7 +36,7 @@ const styles = {
 export default ({ data }) => {
 
   return (
-    <Layout page={2}>
+    <Layout page={3}>
       <Header title={"Info"} noButton />
       <div style={styles.div}>
       <Grid
@@ -73,7 +73,7 @@ export default ({ data }) => {
         </form>
       </Grid>
       </div>
-      <BottomNav page={2} />
+      <BottomNav page={3} />
     </Layout>
   )
 }

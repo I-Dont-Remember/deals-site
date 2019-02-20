@@ -13,15 +13,15 @@ const styles = {
   }
 }
 
-export default ({ data }) => {
-  const location = data.dataYaml
-  console.log(JSON.stringify(location))
+export default ({ data, location }) => {
+    console.log(location)
+  const bar = data.dataYaml
   return (
     <Layout>
-      <Header />
+      <Header fromRandom={location.state?location.state.fromRandom:false} />
       <div style={styles.div}>
         <LocationCard
-            location={location}
+            location={bar}
         />
       </div>
     </Layout>

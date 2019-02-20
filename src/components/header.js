@@ -19,13 +19,16 @@ const styles = {
 }
 
 class Header extends React.Component {
-  handleBack = function() {
-    navigate("/");
+  handleBack = () => {
+    if (this.props.fromRandom) {
+        navigate("/random/")
+    } else {
+        navigate("/");
+    }
   }
 
   render() {
-    console.log(this.props)
-
+      console.log("header props" + JSON.stringify(this.props));
     if (this.props.noButton) {
         return (
             <AppBar position="static">
