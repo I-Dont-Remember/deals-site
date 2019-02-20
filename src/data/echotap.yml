@@ -5,7 +5,7 @@ phoneNumber: 608-256-6928
 website: http://www.echotapmadison.com/
 yelpLink: https://www.yelp.com/biz/echo-tap-and-grill-madison
 deals:
-  - description: Trivia Night (Th 9pm, Sun 8pm)
+  - description: Trivia Night
     time: (Th 9pm, Sun 8pm)
     days:
       - Sun

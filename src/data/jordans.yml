@@ -5,7 +5,8 @@ phoneNumber: 608-251-6375
 website: https://big10pub.com/
 yelpLink: https://www.yelp.com/biz_photos/jordans-big-ten-pub-madison
 deals:
-  - description: $10 bottomless mimosas, 11-4pm
+  - description: $10 bottomless mimosas
+    time: 11-4pm
     days:
       - Sun
     types:
@@ -17,55 +18,64 @@ deals:
     types:
       - Drinks
 
-  - description: $0.60 tacos 6pm til gone
+  - description: $0.60 tacos
+    time: 6pm til gone
     days:
       - Mon
     types:
       - Food
 
-  - description: $1.50 rail mixers, 8pm - close
+  - description: $1.50 rail mixers
+    time: 8pm - close
     days:
       - Mon
     types:
       - Drinks
 
-  - description: $3 Smirnoff mixers after 8pm
+  - description: $3 Smirnoff mixers
+    time: 8 - close
     days:
       - Tue
     types:
       - Drinks
 
-  - description: 1/2 price burgers 6-9pm
+  - description: 1/2 price burgers 
+    time: 6-9pm
     days:
       - Tue
     types:
       - Drinks
 
-  - description: $3 Spotted Cow pints & Captain Morgan mixers, after 8pm
+  - description: $3 Spotted Cow pints & Captain Morgan mixers
+    time: 8 - close
     days:
       - Wed
     types:
       - Drinks
 
-  - description: $3 Swamp Waters, 8 - close
+  - description: $3 Swamp Waters
+    time: 8 - close
     days:
       - Thu
     types:
       - Drinks
 
-  - description: $0.75 wings 6pm til gone
+  - description: $0.75 wings 
+    time: 6pm til gone
     days:
       - Thu
     types:
       - Food
 
-  - description: 2 for $5 domestic pints, 8 - close
+  - description: 2 for $5 domestic pints
+    time: 8 - close
     days:
       - Fri
     types:
       - Drinks
 
-  - description: $3 Long Islands, 2 - close
+  - description: $3 Long Islands
+    time: 2 - close
     days:
       - Sat
     types:

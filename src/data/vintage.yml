@@ -13,7 +13,8 @@ deals:
       - Thu
       - Fri
 
-  - description: $2 Vintage Brewing Co. taps under 7% ABV, 9 - close
+  - description: $2 Vintage Brewing Co. taps under 7% ABV
+    time: 9 - close
     days:
       - Mon
     types:
@@ -25,32 +26,37 @@ deals:
     types:
       - Food
 
-  - description: Trivia Night! Free to play, top 3 win prizes, 7-9pm
+  - description: Trivia Night! Free to play, top 3 win prizes
+    time: 7-9pm
     days:
       - Wed
     types:
       - Events
 
-  - description: Tacos - $2 chicken or beef, $2.50 fish 3-10pm
+  - description: Tacos - $2 chicken or beef, $2.50 fish
+    time: 3-10pm
     days:
       - Thu
     types:
       - Food
 
-  - description: $2 Smirnoff mixers, 9 - close
+  - description: $2 Smirnoff mixers
+    time: 9 - close
     days:
       - Thu
     types:
       - Drinks
 
-  - description: $12 Captain 40oz mini pitchers, 9 - close
+  - description: $12 Captain 40oz mini pitchers
+    time: 9 - close
     days:
       - Fri
       - Sat
     types:
       - Drinks
 
-  - description: Breakfast and Bloody Mary Bar, 9am - Noon
+  - description: Breakfast and Bloody Mary Bar
+    time: 9am - Noon
     days:
       - Sat
       - Sun
@@ -58,7 +64,8 @@ deals:
       - Food
       - Drinks
 
-  - description: $3 Tito's and Tullamore Dew mixers, 3 - close
+  - description: $3 Tito's and Tullamore Dew mixers
+    time: 3 - close
     days:
       - Sun
     types:

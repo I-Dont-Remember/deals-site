@@ -4,6 +4,7 @@ import CardContent from "@material-ui/core/CardContent"
 import Typography from "@material-ui/core/Typography"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import { navigate } from "gatsby"
+import Deals from "../components/deals"
 
 const styles = {
   card: {
@@ -28,13 +29,7 @@ class LocationItem extends React.Component {
             <Typography variant="h5" component="h2">
               {location.name}
             </Typography>
-            <ul>
-              {deals.map(d => (
-                <li key={d.description}>
-                  {d.description + " | " + d.types}
-                </li>
-              ))}
-            </ul>
+            <Deals deals={deals} />
           </CardContent>
         </CardActionArea>
       </Card>

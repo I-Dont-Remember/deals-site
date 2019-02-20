@@ -5,7 +5,8 @@ phoneNumber: 608-819-8610
 website: https://sconniebar.com
 yelpLink: https://www.yelp.com/biz/sconniebar-madison
 deals:
-  - description: Sconnie Hour - $1 rails, domestic taps, or specialty shots, 10:30-11:30pm
+  - description: Sconnie Hour - $1 rails, domestic taps, or specialty shots
+    time: 10:30-11:30pm
     days:
       - Mon
       - Tue
@@ -23,13 +24,15 @@ deals:
     types:
       - Drinks
 
-  - description: 1/2 price Loaded Nachos 6-10pm
+  - description: 1/2 price Loaded Nachos
+    time: 6-10pm
     days:
       - Mon
     types:
       - Food
 
-  - description: $2 tacos 6-10pm
+  - description: $2 tacos
+    time: 6-10pm
     days: 
       - Tue
     types:

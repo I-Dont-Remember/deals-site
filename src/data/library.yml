@@ -5,7 +5,8 @@ phoneNumber: 608-251-1200
 website: https://www.librarycafeandbar.com/
 yelpLink: https://www.yelp.com/biz/the-library-cafe-and-bar-madison
 deals:
-  - description: Happy Hour - $2.50 rail mixers, $2.25 domestics from 4-7pm
+  - description: Happy Hour - $2.50 rail mixers, $2.25 domestics
+    time: 4-7pm
     days:
       - Mon
       - Tue
@@ -15,7 +16,8 @@ deals:
     types:
       - Drinks
 
-  - description: $11 Burger and Beer combo 4-10pm
+  - description: $11 Burger and Beer combo
+    time: 4-10pm
     days:
       - Mon
     types:
@@ -40,7 +42,8 @@ deals:
     types:
       - Drinks
 
-  - description: $3.25 Long Islands, 4 - close
+  - description: $3.25 Long Islands
+    time: 4 - close
     days:
       - Fri
     types:
@@ -52,7 +55,8 @@ deals:
     types:
       - Drinks
 
-  - description: Trivia Tuesday! starts at 8
+  - description: Trivia Tuesday!
+    time: starts at 8
     days:
       - Tue
     types:

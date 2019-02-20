@@ -4,8 +4,8 @@ displayAddress: 223 N Frances St, Madison,WI 53703
 website: https://www.thegritty.com/
 yelpLink: https://www.yelp.com/biz/nitty-gritty-madison-madison
 deals:
-  - description: Trivia Night @ 8pm
-    time: 9pm - close
+  - description: Trivia Night!
+    time: starts at 8pm
     days: 
       - Tue
     types:

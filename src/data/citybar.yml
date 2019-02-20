@@ -5,13 +5,15 @@ phoneNumber: 608-250-2489
 website: http://www.citybarmadison.com/
 yelpLink: https://www.yelp.com/biz/city-bar-madison
 deals:
-  - description: Trivia Night, $50 gift card prize, starts 8:30pm
+  - description: Trivia Night, $50 gift card prize
+    time: starts 8:30pm
     days: 
       - Mon
     types:
       - Events
 
-  - description: Late Night Happy Hour - $2 rails & domestic bottle/cans, 9-11pm
+  - description: Late Night Happy Hour - $2 rails & domestic bottle/cans
+    time: 9-11pm
     days:
       - Sun
       - Mon
@@ -21,7 +23,8 @@ deals:
     types:
       - Drinks
 
-  - description: Late Night Happy Hour - $3 Captain mixers, 9-11pm
+  - description: Late Night Happy Hour - $3 Captain mixers
+    time: 9-11pm
     days:
       - Sun
       - Mon
@@ -31,27 +34,31 @@ deals:
     types:
       - Drinks
 
-  - description: Free darts, 7 - close
+  - description: Free darts
+    time: 7 - close
     days:
       - Tue
     types:
       - Events
 
-  - description: $3 Captain mixers, 9 - close
+  - description: $3 Captain mixers
+    time: 9 - close
     days:
       - Thu
     types:
       - Drinks
 
 
-  - description: $3 16oz PBR, 7 - close
+  - description: $3 16oz PBR
+    time: 7 - close
     days:
       - Fri
       - Sat
     types:
       - Drinks
 
-  - description: $4.50 Tito's mixers, 7 - close
+  - description: $4.50 Tito's mixers
+    time: 7 - close
     days:
       - Fri
       - Sat

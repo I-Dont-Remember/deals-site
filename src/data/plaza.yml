@@ -5,55 +5,64 @@ phoneNumber: 608-255-6592
 website: http://www.theplazatavern.com/
 yelpLink: https://www.yelp.com/biz/the-plaza-tavern-madison
 deals:
-  - description: $2 rail drinks, 7 - close
+  - description: $2 rail drinks
+    time: 7 - close
     days: 
       - Mon
     types:
       - Drinks
 
-  - description: $1.50 PBR, 7 - close
+  - description: $1.50 PBR
+    time: 7 - close
     days: 
       - Mon
     types:
       - Drinks
 
-  - description: $3.50 Top-shelf Gin & Irish Whiskey, 7 - close
+  - description: $3.50 Top-shelf Gin & Irish Whiskey
+    time: 7 - close
     days:
       - Tue
     types:
       - Drinks
 
-  - description: $3.50 Jack, Absolut, Stoli drinks, 7 - close
+  - description: $3.50 Jack, Absolut, Stoli drinks
+    time: 7 - close
     days:
       - Wed
     types:
       - Drinks
 
-  - description: $2.50 Long Islands, 7 - close
+  - description: $2.50 Long Islands
+    time: 7 - close
     days:
       - Thu
     types:
       - Drinks
 
-  - description: $3 craft beer pints, 7 - close
+  - description: $3 craft beer pints
+    time: 7 - close
     days:
       - Thu
     types:
       - Drinks
 
-  - description: $2.50 rail mixers, 9 - close
+  - description: $2.50 rail mixers
+    time: 9 - close
     days:
       - Fri
     types:
       - Drinks
 
-  - description: $2 PBR pints, 9 - close
+  - description: $2 PBR pints
+    time: 9 - close
     days:
       - Fri
     types:
       - Drinks
 
-  - description: $2.50 domestic bottles, 9 - close
+  - description: $2.50 domestic bottles
+    time: 9 - close
     days:
       - Sat
     types:

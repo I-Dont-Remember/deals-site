@@ -5,7 +5,8 @@ phoneNumber: 608-250-8989
 website: http://luckys1313.com/
 yelpLink: https://www.yelp.com/biz/luckys-1313-brew-pub-madison-2
 deals:
-  - description: Lucky's hour, 2-4-1 rail mixers 11pm-1am
+  - description: Lucky's hour, 2-4-1 rail mixers
+    time: 11pm-1am
     days:
       - Mon
       - Tue

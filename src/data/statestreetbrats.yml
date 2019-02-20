@@ -53,13 +53,15 @@ deals:
     types:
       - Events
 
-  - description: Trivia Night @ 7:30pm
+  - description: Trivia Night!
+    time: starts 7:30pm
     days:
       - Wed
     types:
       - Events
 
-  - description: $1 rail mixers, mixed shots, & High Life 9pm - close
+  - description: $1 rail mixers, mixed shots, & High Life
+    time: 9pm - close
     days:
       - Thu
     types:

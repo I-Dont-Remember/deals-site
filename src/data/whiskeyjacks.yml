@@ -5,13 +5,15 @@ phoneNumber: 608-819-8881
 website: http://www.whiskeyjacksmadtown.com/
 yelpLink: https://www.yelp.com/biz/whiskey-jacks-saloon-madison
 deals:
-  - description: 2-4-1 schnorkel shots, 9pm - close
+  - description: 2-4-1 schnorkel shots
+    time: 9pm - close
     days: 
       - Mon
     types:
       - Drinks
 
-  - description: $4 double rail mixers, 9pm - close
+  - description: $4 double rail mixers
+    time: 9pm - close
     days:
       - Mon
     types:
@@ -24,18 +26,21 @@ deals:
       - Drinks
 
   - description: $0.25 PBR taps & rail mixers
+    time: 9 - 10pm
     days:
       - Thu
     types:
       - Drinks
 
   - description: $0.50 PBR taps & rail mixers
+    time: 10 - 11pm
     days:
       - Thu
     types:
       - Drinks
 
   - description: $1 PBR taps & rail mixers
+    time: 11 - midnight
     days:
       - Thu
     types:

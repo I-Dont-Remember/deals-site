@@ -5,7 +5,8 @@ website: http://thechurchkeybar.com/
 phoneNumber: 608-259-0444
 yelpLink: https://www.yelp.com/biz/churchkey-bar-and-grill-madison
 deals:
-  - description: Free mini-corndogs or frickles with every drink, 9pm-midnight
+  - description: Free mini-corndogs or frickles with every drink
+    time: 9pm-midnight
     days:
       - Tue
     types:
@@ -35,7 +36,8 @@ deals:
     types:
       - Drinks
 
-  - description: $10 all you can drink, 10pm - 1am
+  - description: $10 all you can drink
+    time: 10pm - 1am
     days:
       - Thu
     types:

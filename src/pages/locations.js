@@ -137,6 +137,8 @@ export const query = graphql`
             deals {
                 description
                 days
+                time
+                types
             }
         }
         }

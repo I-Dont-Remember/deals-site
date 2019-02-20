@@ -8,6 +8,7 @@ import Tab from '@material-ui/core/Tab'
 import Tabs from '@material-ui/core/Tabs'
 import AppBar from '@material-ui/core/AppBar'
 import SwipeableViews from "react-swipeable-views"
+import Deals from "../components/deals"
 const utils = require("../utils");
 
 const splitDealsByDay = (deals) => {
@@ -52,15 +53,7 @@ class DayTab extends React.Component {
             <CardContent style={styles.content}>
             {
                 (!! this.props.deals) 
-                ? (<ul>
-                        {
-                            this.props.deals.map(d => {
-                            return (
-                                <li key={d.description}>{d.description}</li>
-                            )
-                            })
-                        }
-                    </ul>)
+                ? (<Deals deals={this.props.deals} />)
                 : (<div style={styles.empty}>Nothing for now...</div>)
             }
             </CardContent>

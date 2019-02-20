@@ -134,6 +134,7 @@ class IndexPage extends React.Component {
                   name
                   deals {
                     description
+                    time
                     days
                     types
                   }

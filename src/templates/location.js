@@ -38,7 +38,9 @@ export const query = graphql`
       yelpLink
       deals {
         description
+        time
         days
+        type
       }
     }
   }
