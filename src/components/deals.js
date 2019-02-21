@@ -5,7 +5,8 @@ import LocalBar from "@material-ui/icons/LocalBar"
 
 const styles = {
     ul: {
-        listStyle: "none"
+        listStyle: "none",
+        marginBottom: "2%"
     }
 }
 
@@ -31,7 +32,7 @@ class Deals extends React.Component {
             {
                 this.props.deals.map(d=> {
                     return (<li key={Math.random()}>
-                        {chooseIcons(d.types)}  {d.description}{d.time?" | "+d.time:""}<i>{this.props.showDay?" | "+d.days:""}</i>
+                        {chooseIcons(d.types)}  {d.description} | <i>{d.time?d.time:"all day"}{this.props.showDay?" | "+d.days:""}</i>
                     </li>)
                 })
             }

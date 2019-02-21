@@ -34,7 +34,7 @@ deals:
     days:
       - Wed
     types:
-      - Event
+      - Events
       - Drinks
 
   - description: Bud Light taps $1 & $3 Long Islands

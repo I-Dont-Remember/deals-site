@@ -41,7 +41,7 @@ class LocationCard extends React.Component {
             {!!location.deals
                 ?<DealsContainer deals={location.deals} />
                 :<div style={styles.soonMsg}>
-                    <p>Coming Soon!</p>
+                    <p>Deals Coming Soon!</p>
                 </div>
             }
           </CardContent>
