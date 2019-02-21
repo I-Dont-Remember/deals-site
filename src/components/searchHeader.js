@@ -20,7 +20,8 @@ const inputId = "search-input";
 const styles = {
   appBar: {
     padding: "6px",
-    alignItems: "center"
+    alignItems: "center",
+    boxShadow: "0px 3px 10px grey"
   },
   toolbar: {
     maxWidth: "600px",

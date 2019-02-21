@@ -6,12 +6,14 @@ import { navigate } from "gatsby"
 import InfoOutlined from "@material-ui/icons/InfoOutlined"
 import PlaceOutlined from "@material-ui/icons/PlaceOutlined"
 import LocalBarOutlined from "@material-ui/icons/LocalBarOutlined"
+import NotListedLocationOutlined from "@material-ui/icons/NotListedLocationOutlined"
 
 const styles = {
     nav: {
         bottom: 0,
         position: "fixed",
-        width: "100%"
+        width: "100%",
+        boxShadow: "0px -5px 20px grey"
     }
 }
 
@@ -45,7 +47,7 @@ class BottomNav extends React.Component {
         >
             <BottomNavigationAction label="Deals" icon={<LocalBarOutlined />} />
             <BottomNavigationAction label="Bars" icon={<PlaceOutlined />} />
-            <BottomNavigationAction label="Random" icon={<InfoOutlined />} />
+            <BottomNavigationAction label="Random" icon={<NotListedLocationOutlined />} />
             <BottomNavigationAction label="Info" icon={<InfoOutlined />} />
         </BottomNavigation>
         </div>

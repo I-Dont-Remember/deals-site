@@ -91,7 +91,7 @@ class RandomPage extends React.Component {
                     {
                     this.state.waiting
                     ?<CircularProgress size={80} style={StyleSheet.progress} />
-                    :<h3>You wanna go to {bar?<Link to={bar.slug} state={{ fromRandom: true }}>{bar.name}</Link>:"___"} !</h3>
+                    :<h3>{bar?<Link to={bar.slug} state={{ fromRandom: true }}>{bar.name} !</Link>:"_____"}</h3>
                     }
                 </Grid>
                 <Grid
