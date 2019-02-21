@@ -57,7 +57,7 @@ class LocationList extends React.Component {
 
     const matches = deals.filter(deal => {
       const notFiltered = this.isNotFiltered(deal)
-      return deal.description.indexOf(term) !== -1 && notFiltered
+      return deal.description.toLowerCase().indexOf(term) !== -1 && notFiltered
     })
     return matches
   }
@@ -96,6 +96,7 @@ class LocationList extends React.Component {
                             key={l.edge.node.name}
                             location={l.edge.node}
                             validDeals={l.validDeals}
+                            showDay={this.props.day === "Any"}
                         />)
                     })
                 }

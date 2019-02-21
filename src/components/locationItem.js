@@ -29,7 +29,7 @@ class LocationItem extends React.Component {
             <Typography variant="h5" component="h2">
               {location.name}
             </Typography>
-            <Deals deals={deals} />
+            <Deals showDay={this.props.showDay} deals={deals} />
           </CardContent>
         </CardActionArea>
       </Card>

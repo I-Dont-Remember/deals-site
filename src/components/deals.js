@@ -30,8 +30,8 @@ class Deals extends React.Component {
         >
             {
                 this.props.deals.map(d=> {
-                    return (<li key={d.description}>
-                        {chooseIcons(d.types)}  {d.description}{d.time?" | "+d.time:""}
+                    return (<li key={Math.random()}>
+                        {chooseIcons(d.types)}  {d.description}{d.time?" | "+d.time:""}<i>{this.props.showDay?" | "+d.days:""}</i>
                     </li>)
                 })
             }
