@@ -1,0 +1,13 @@
+name: The Mason Lounge
+campusSlug: uw-madison
+displayAddress: 416 S. Park St, Madison,WI 53715
+phoneNumber: 608-255-7777
+website:
+yelpLink: https://www.yelp.com/biz/the-mason-lounge-madison
+deals:
+  - description: Jazz Night
+    time: starts 9pm
+    days: 
+      - Tue
+    types:
+      - Events
