@@ -22,6 +22,12 @@ deals:
     days:
       - Tue
     types:
+      - Drinks  
+      
+  - description: $3 Redbull vodka
+    days:
+      - Tue
+    types:
       - Drinks
 
   - description: Captain Morgan doubles $3.25
@@ -36,6 +42,19 @@ deals:
     types:
       - Drinks
 
+  - description: $0.50 wings hot or mild
+    days:
+      - Wed
+    types:
+      - Food
+
+  - description: Free darts & popcorn
+    time: starts at 7pm
+    days:
+      - Wed
+    types:
+      - Events
+
   - description: $10 all you can drink
     time: 10pm - 1am
     days:
@@ -43,12 +62,18 @@ deals:
     types:
       - Drinks
 
-  - description: $0.10 wings and 5 Bud Lights for $10
+  - description: $3 Bud Light pitchers
+    time: 7-10pm
     days:
       - Thu
     types:
       - Drinks
-      - Food
+
+  - description: $8 LIT pitchers
+    days:
+      - Thu
+    types:
+      - drinks
 
   - description: PBR Tallboys $2.50
     days:
@@ -62,6 +87,12 @@ deals:
     types:
       - Drinks
 
+  - description: $5 Key LIT Jumbo
+    days:
+      - Fri
+    types:
+      - Drinks
+
   - description: $6 for 2 tallboys
     days:
       - Sat
@@ -69,6 +100,12 @@ deals:
       - Drinks
 
   - description: $3 Long Islands
+    days:
+      - Sat
+    types:
+      - Drinks
+
+  - description: $4 Jack, Jameson, Jim Beam mixers
     days:
       - Sat
     types:
