@@ -7,6 +7,14 @@ import { navigate, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Grid from "@material-ui/core/Grid"
 import LocationCard from "../components/locationCard"
+import BarList from "../components/barList"
+import BarItem from "../components/barItem"
+import Paper from "@material-ui/core/Paper"
+import Input from "@material-ui/core/Input"
+import InputAdornment from "@material-ui/core/InputAdornment"
+import IconButton from "@material-ui/core/IconButton"
+import Close from "@material-ui/icons/Close"
+
 
 const styles = {
   div: {
@@ -31,7 +39,10 @@ const styles = {
   },
   image: {
       opacity: "0.5",
-      marginTop: "35%"
+  },
+  noMatchesDiv: {
+    marginTop: "35%",
+    textAlign: "center"
   },
   grid: {
         height: "100%"
@@ -40,6 +51,18 @@ const styles = {
       marginTop: "10%",
       width: "95%",
       maxWidth: "400px"
+  },
+  paper: {
+    display: "flex",
+    width: "90%",
+    alignItems: "center",
+    padding: "2px 4px",
+    maxWidth: "400px",
+    marginTop: "2%",
+  },
+  input: {
+    width: "95%",
+    maxWidth: "300px",
   }
 }
 
@@ -64,21 +87,41 @@ const controlComponent = props => (
 </div>
 )
 
-class LocationsPage extends React.Component {
 
+function shimBars(edges) {
+    return edges.map(e => {
+        return e.node;
+    })
+}
+
+function getValidBars(text, bars) {
+    // filter the bars
+    console.log("Text " + text);
+    return bars.filter(b => {
+        return b.name.toLowerCase().indexOf(text.toLowerCase()) !== -1
+    });
+}
+
+class LocationsPage extends React.Component {
     state = {
-        option: null
+        value: ""
     }
 
-    handleLocationSelectChange = selectedOption => {
-        this.setState({ option: selectedOption });
-        //navigate(selectedOption.value)
-      }
+    inputOnChange = (event) => {
+        console.log(event.target.value);
+        this.setState({value: event.target.value })
+    }
+
+    handleClear = () => {
+        this.setState({
+            value: ""
+        })
+    }
 
     render() {
-        const data = this.props.data;
-        const locations = data.allDataYaml.edges.map(e => e.node);
-        const locationOptions = shimLocationOptions(locations);
+        const bars = shimBars(this.props.data.allDataYaml.edges);
+        const validBars = getValidBars(this.state.value, bars);
+        console.log(validBars.length)
         return (
         <Layout page={1}>
             <Header title={"Bars"} noButton />
@@ -90,28 +133,39 @@ class LocationsPage extends React.Component {
                 justify="center"
                 alignItems="center"
             >
-                <Select
-                    components={{
-                        Control: controlComponent,
-                        SelectContainer: selectComponent,
-                    }}
-                    options={locationOptions}
-                    value={this.state.option}
-                    onChange={this.handleLocationSelectChange}
-                    placeholder="type a name..."
-                    isClearable
-                />
-                {
-                !this.state.option
-                    ?<Img
-                    style={styles.image}
-                    fixed={data.file.childImageSharp.fixed}
+                <Paper style={styles.paper}>
+                    <Input
+                        style={styles.input}
+                        placeholder={"Find a bar..."}
+                        onChange={this.inputOnChange}
+                        value={this.state.value}
+                        endAdornment={
+                            (this.state.value !== "")
+                            ?<InputAdornment>
+                                <IconButton
+                                    onClick={this.handleClear}
+                                >
+                                    <Close />
+                                </IconButton>
+                            </InputAdornment>
+                            :<div></div>
+                        }
                     />
-                    :<div style={styles.cardDiv}>
-                        <LocationCard
-                            location={this.state.option.value}
+                </Paper>
+
+                {(validBars && validBars.length !== 0)              
+                    ? <BarList
+                        bars={validBars}
+                    />
+                    :(
+                    <div style={styles.noMatchesDiv}>
+                        <Img
+                        style={styles.image}
+                        fixed={this.props.data.file.childImageSharp.fixed}
                         />
+                        <h5>No matches found</h5>
                     </div>
+                    )
                 }
             </Grid>
             </div>
@@ -134,12 +188,6 @@ export const query = graphql`
             phoneNumber
             website
             yelpLink
-            deals {
-                description
-                days
-                time
-                types
-            }
         }
         }
     }

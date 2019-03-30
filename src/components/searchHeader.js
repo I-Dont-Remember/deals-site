@@ -13,7 +13,7 @@ import FormGroup from "@material-ui/core/FormGroup"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import Select, { components } from "react-select"
 import Divider from "@material-ui/core/Divider"
-import { InputAdornment } from "@material-ui/core";
+import InputAdornment from "@material-ui/core/InputAdornment"
 
 const inputId = "search-input";
 
@@ -125,13 +125,15 @@ class SearchHeader extends React.Component {
                 onChange={this.props.searchOnChange}
                 onKeyPress={this.props.handleKeyPress}
                 endAdornment={
-                    <InputAdornment>
+                    (this.props.currentValue !== "")
+                    ?<InputAdornment>
                         <IconButton
                             onClick={this.props.handleClear}
                         >
                             <Close />
                         </IconButton>
                     </InputAdornment>
+                    :<div></div>
                 }
               />
               <Divider style={styles.divider} />

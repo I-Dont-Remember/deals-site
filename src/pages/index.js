@@ -166,6 +166,7 @@ class IndexPage extends React.Component {
               onKeyDown={this.onLocationKeyDown}
               handleLocation={this.handleLocationButton}
               handleClear={this.handleClear}
+              currentValue={this.state.inputValue}
             />
             <div
               style={{
