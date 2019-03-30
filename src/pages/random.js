@@ -68,7 +68,7 @@ class RandomPage extends React.Component {
     render() {
         const bar = this.state.bar;
         return (
-            <Layout page={2}>
+            <Layout page={3}>
               <Header title={"Randomizer"} noButton />
               <div style={styles.div}>
               <Grid
@@ -103,7 +103,7 @@ class RandomPage extends React.Component {
                 </Grid>
               </Grid>
               </div>
-              <BottomNav page={2} />
+              <BottomNav page={3} />
             </Layout>
           )
     }

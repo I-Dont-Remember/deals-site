@@ -7,6 +7,10 @@ import InfoOutlined from "@material-ui/icons/InfoOutlined"
 import PlaceOutlined from "@material-ui/icons/PlaceOutlined"
 import LocalBarOutlined from "@material-ui/icons/LocalBarOutlined"
 import NotListedLocationOutlined from "@material-ui/icons/NotListedLocationOutlined"
+import MapOutlined from "@material-ui/icons/MapOutlined"
+import StarBorderOutlined from "@material-ui/icons/StarBorderOutlined"
+import MonetizationOnOutlined from "@material-ui/icons/MonetizationOnOutlined"
+import AutorenewOutlined from "@material-ui/icons/AutorenewOutlined"
 
 const styles = {
     nav: {
@@ -24,9 +28,11 @@ const handleChange = (event, value) => {
             navigate("/locations/");
             break;
         case 2:
+            navigate("/map/")
+        case 3:
             navigate("/random/");
             break;
-        case 3:
+        case 4:
             navigate("/info/");
             break;
         default:
@@ -43,11 +49,11 @@ class BottomNav extends React.Component {
             style={styles.nav}
             value={this.props.page}
             onChange={handleChange}
-            showLabels
         >
-            <BottomNavigationAction label="Deals" icon={<LocalBarOutlined />} />
-            <BottomNavigationAction label="Bars" icon={<PlaceOutlined />} />
-            <BottomNavigationAction label="Random" icon={<NotListedLocationOutlined />} />
+            <BottomNavigationAction label="Deals" icon={<MonetizationOnOutlined />} />
+            <BottomNavigationAction label="Bars" icon={<LocalBarOutlined />} />
+            <BottomNavigationAction label="Map" icon={<PlaceOutlined />} />
+            <BottomNavigationAction label="Random" icon={<AutorenewOutlined />} />
             <BottomNavigationAction label="Info" icon={<InfoOutlined />} />
         </BottomNavigation>
         </div>
