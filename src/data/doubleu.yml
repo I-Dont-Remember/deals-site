@@ -4,4 +4,7 @@ displayAddress: 620 University Ave, Madison,WI 53715
 phoneNumber: 608-512-0341
 website: https://www.thedoubleubar.com/
 yelpLink: https://www.yelp.com/biz/the-double-u-madison
+position:
+  lat: 43.073540
+  lng: -89.396820
 deals:

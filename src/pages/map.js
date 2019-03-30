@@ -11,6 +11,7 @@ import Button from "@material-ui/core/Button"
 import PlaceOutlined from "@material-ui/icons/PlaceOutlined"
 
 import {Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
+import { StaticQuery } from "gatsby"
 
 const styles = {
   div: {
@@ -55,12 +56,14 @@ class MapPage extends React.Component{
         zoom: 15
       };
 
-      onMarkerClick = (props, marker, e) =>
-      this.setState({
-        selectedPlace: props,
-        activeMarker: marker,
-        showingInfoWindow: true
-      });
+      onMarkerClick = (props, marker, e) => {
+        console.log(props);
+        this.setState({
+            selectedPlace: props,
+            activeMarker: marker,
+            showingInfoWindow: true
+        });
+      }
   
     onMapClicked = (props) => {
       if (this.state.showingInfoWindow) {
@@ -72,6 +75,37 @@ class MapPage extends React.Component{
     };
     render() {
         return (
+            <StaticQuery
+                query={graphql`
+                query {
+                    allDataYaml {
+                    edges {
+                        node {
+                            fields {
+                                slug
+                            }
+                            name
+                            displayAddress
+                            position {
+                                lat
+                                lng
+                            }
+                        }
+                    }
+                    }
+                }
+                `}
+            >
+                {data => {
+                let bars = data.allDataYaml.edges.map(e=> e.node);
+                // only use bars that have lat/lng
+                bars = bars.filter(b => {
+                    return b.position
+                })
+
+                console.log("bars with position = " + bars.length);
+
+                return (
             <Layout page={2}>
               <Header noButton />
                 <Map
@@ -81,28 +115,28 @@ class MapPage extends React.Component{
                     onClick={this.onMapClicked}
                     style={styles.map}
                 >
-                    { /* buckinghams 802 Regent St */ }
-                    <Marker
-                        name={"Buckingham's"}
-                        position={{lat: 43.067830, lng: -89.399630}}
+                    {bars.map(b => (
+                        <Marker
+                        key={b.name}
+                        name={b.name}
+                        displayAddress={b.displayAddress}
+                        position={b.position}
                         onClick={this.onMarkerClick}
-                    />
-                    { /* Double U 620 University Ave */ }
-                    <Marker
-                        name={"Double U"}
-                        position={{lat: 43.073540, lng: -89.396820}}
-                        onClick={this.onMarkerClick}
-                    />
+                        />
+                    ))}
                     <InfoWindow
                         marker={this.state.activeMarker}
                         visible={this.state.showingInfoWindow}>
                         <div>
                             <h3>{this.state.selectedPlace.name}</h3>
+                            <p>{this.state.selectedPlace.displayAddress}</p>
                         </div>
                     </InfoWindow>
                 </Map>
               <BottomNav page={2} />
             </Layout>
+                )}}
+            </StaticQuery>
           )
     }
 } 

@@ -4,4 +4,7 @@ displayAddress: 430 W Gilman St, Madison,WI 53703
 phoneNumber: 608-250-9900
 website:
 yelpLink: https://www.yelp.com/biz/blue-velvet-lounge-madison
+position:
+  lat: 43.074320
+  lng: -89.394550
 deals:
