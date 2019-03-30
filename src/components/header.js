@@ -20,10 +20,18 @@ const styles = {
 
 class Header extends React.Component {
   handleBack = () => {
-    if (this.props.fromRandom) {
-        navigate("/random/")
-    } else {
-        navigate("/");
+      console.log("props: " + JSON.stringify(this.props));
+
+    // has to be strings not ints because some weird stuff with passing state
+    switch(this.props.fromPage) {
+        case "3":
+            navigate("/random/");
+            break;
+        case "2":
+            navigate("/locations/");
+            break;
+        default:
+            navigate("/");
     }
   }
 

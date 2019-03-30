@@ -19,7 +19,10 @@ const styles = {
 class BarItem extends React.Component {
   toBarPage = () => {
     const bar = this.props.bar;
-    navigate(bar.fields.slug)
+    navigate(bar.fields.slug, 
+    {
+        state: { fromPage: "2"},
+    })
   }
 
   render() {

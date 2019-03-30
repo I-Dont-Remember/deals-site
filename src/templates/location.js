@@ -18,7 +18,7 @@ export default ({ data, location }) => {
   const bar = data.dataYaml
   return (
     <Layout>
-      <Header fromRandom={location.state?location.state.fromRandom:false} />
+      <Header fromPage={location.state?location.state.fromPage:"1"} />
       <div style={styles.div}>
         <LocationCard
             location={bar}

@@ -91,7 +91,8 @@ class RandomPage extends React.Component {
                     {
                     this.state.waiting
                     ?<CircularProgress size={80} style={StyleSheet.progress} />
-                    :<h3>{bar?<Link to={bar.slug} state={{ fromRandom: true }}>{bar.name} !</Link>:"_____"}</h3>
+                    /* has to be string "3" not int because of weird crap breaking when passing it*/
+                    :<h3>{bar?<Link to={bar.slug} state={{ fromPage: "3" }}>{bar.name} !</Link>:"_____"}</h3>
                     }
                 </Grid>
                 <Grid
