@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper"
 import Button from "@material-ui/core/Button"
 import PlaceOutlined from "@material-ui/icons/PlaceOutlined"
 
-import GoogleMapReact from "google-map-react"
+import {Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
 
 const styles = {
   div: {
@@ -33,12 +33,19 @@ const styles = {
   button: {
       marginTop: "5%",
       marginBottom: "15%",
+  },
+  map: {
+      maxHeight: "80%"
   }
 }
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 class MapPage extends React.Component{
+    state = {
+        showingInfoWindow: false,
+        activeMarker: {},
+        selectedPlace: {},
+    };
+
     static defaultProps = {
         // centered on Sellery Hall
         center: {
@@ -48,32 +55,58 @@ class MapPage extends React.Component{
         zoom: 15
       };
 
+      onMarkerClick = (props, marker, e) =>
+      this.setState({
+        selectedPlace: props,
+        activeMarker: marker,
+        showingInfoWindow: true
+      });
+  
+    onMapClicked = (props) => {
+      if (this.state.showingInfoWindow) {
+        this.setState({
+          showingInfoWindow: false,
+          activeMarker: null
+        })
+      }
+    };
     render() {
         return (
             <Layout page={2}>
               <Header title={"Map"} noButton />
-              <div style={styles.div}>
-                <GoogleMapReact
-                    bootstrapURLKeys={{ key: "AIzaSyDDoL2BTrgXzUY7s1xcFVbAY5mz_Bf2C0A"}}
-                    defaultCenter={this.props.center}
-                    defaultZoom={this.props.zoom}
+                <Map
+                    google={this.props.google}
+                    initialCenter={this.props.center}
+                    zoom={this.props.zoom}
+                    onClick={this.onMapClicked}
+                    style={styles.map}
                 >
                     { /* buckinghams 802 Regent St */ }
-                    <PlaceOutlined
-                        lat={43.067830}
-                        lng={-89.399630}
+                    <Marker
+                        name={"Buckingham's"}
+                        position={{lat: 43.067830, lng: -89.399630}}
+                        onClick={this.onMarkerClick}
                     />
                     { /* Double U 620 University Ave */ }
-                    <PlaceOutlined
-                        lat={43.073540}
-                        lng={-89.396820}
+                    <Marker
+                        name={"Double U"}
+                        position={{lat: 43.073540, lng: -89.396820}}
+                        onClick={this.onMarkerClick}
                     />
-                </GoogleMapReact>
-              </div>
+                    <InfoWindow
+                        marker={this.state.activeMarker}
+                        visible={this.state.showingInfoWindow}>
+                        <div>
+                            <h3>{this.state.selectedPlace.name}</h3>
+                        </div>
+                    </InfoWindow>
+                </Map>
               <BottomNav page={2} />
             </Layout>
           )
     }
 } 
 
-export default MapPage
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyDDoL2BTrgXzUY7s1xcFVbAY5mz_Bf2C0A")
+})(MapPage)

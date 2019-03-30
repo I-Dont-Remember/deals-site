@@ -8,7 +8,6 @@ import PlaceOutlined from "@material-ui/icons/PlaceOutlined"
 import LocalBarOutlined from "@material-ui/icons/LocalBarOutlined"
 import NotListedLocationOutlined from "@material-ui/icons/NotListedLocationOutlined"
 import MapOutlined from "@material-ui/icons/MapOutlined"
-import StarBorderOutlined from "@material-ui/icons/StarBorderOutlined"
 import MonetizationOnOutlined from "@material-ui/icons/MonetizationOnOutlined"
 import AutorenewOutlined from "@material-ui/icons/AutorenewOutlined"
 
@@ -28,7 +27,8 @@ const handleChange = (event, value) => {
             navigate("/locations/");
             break;
         case 2:
-            navigate("/map/")
+            navigate("/map/");
+            break;
         case 3:
             navigate("/random/");
             break;
