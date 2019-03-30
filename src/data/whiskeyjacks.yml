@@ -4,6 +4,9 @@ displayAddress: 552 State St, Madison,WI 53703
 phoneNumber: 608-819-8881
 website: http://www.whiskeyjacksmadtown.com/
 yelpLink: https://www.yelp.com/biz/whiskey-jacks-saloon-madison
+position:
+  lat: 43.075147
+  lng: -89.39484
 deals:
   - description: 2-4-1 schnorkel shots
     time: 9pm - close

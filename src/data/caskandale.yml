@@ -4,4 +4,7 @@ displayAddress: 212 State St, Madison,WI 53703
 phoneNumber: 608-467-9450
 website: http://caskandalemadison.com/
 yelpLink: https://www.yelp.com/biz/cask-and-ale-madison
+position:
+  lat: 43.075030
+  lng: -89.388540
 deals:

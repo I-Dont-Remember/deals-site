@@ -4,6 +4,9 @@ displayAddress: 603 State St, Madison,WI 53703
 phoneNumber: 608-255-5544
 website: https://statestreetbrats.com/
 yelpLink: https://www.yelp.com/biz/state-street-brats-madison
+position:
+  lat: 43.074681
+  lng: -89.395995
 deals:
   - description: Tito's, Morgan, & Death's Door - $5 single, $7 double, $10 pitchers
     days:

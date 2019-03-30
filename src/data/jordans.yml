@@ -4,6 +4,9 @@ displayAddress: 1330 Regent St, Madison,WI 53715
 phoneNumber: 608-251-6375
 website: https://big10pub.com/
 yelpLink: https://www.yelp.com/biz_photos/jordans-big-ten-pub-madison
+position:
+  lat: 43.068040
+  lng: -89.408240
 deals:
   - description: $10 bottomless mimosas
     time: 11-4pm

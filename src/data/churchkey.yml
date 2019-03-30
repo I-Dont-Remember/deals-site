@@ -4,6 +4,9 @@ displayAddress: 626 University Ave, Madison,WI 53715
 website: http://thechurchkeybar.com/
 phoneNumber: 608-259-0444
 yelpLink: https://www.yelp.com/biz/churchkey-bar-and-grill-madison
+position:
+  lat: 43.073540
+  lng: -89.397050
 deals:
   - description: Free mini-corndogs or frickles with every drink
     time: 9pm-midnight

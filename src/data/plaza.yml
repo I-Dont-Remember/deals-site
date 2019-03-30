@@ -1,9 +1,12 @@
 name: The Plaza Tavern
 campusSlug: uw-madison
-displayAddress: 319 North Henry Street, Madison,WI 53703
+displayAddress: 319 N Henry St, Madison,WI 53703
 phoneNumber: 608-255-6592
 website: http://www.theplazatavern.com/
 yelpLink: https://www.yelp.com/biz/the-plaza-tavern-madison
+position:
+  lat: 43.075385
+  lng: -89.390213
 deals:
   - description: $2 rail drinks
     time: 7 - close

@@ -4,6 +4,9 @@ displayAddress: 529 University Ave, Madison,WI 53703
 phoneNumber: 608-250-0700
 website: http://vintagemadison.com/
 yelpLink: https://www.yelp.com/biz/vintage-spirits-and-grill-madison
+position:
+  lat: 43.07298
+  lng: -89.39549
 deals:
   - description:  Happy Hour ($3 Vintage Brewing Co. Taps under 7% ABV, $2 Rail Mixers)
     days:

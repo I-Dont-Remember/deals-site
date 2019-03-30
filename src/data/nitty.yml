@@ -3,6 +3,9 @@ campusSlug: uw-madison
 displayAddress: 223 N Frances St, Madison,WI 53703
 website: https://www.thegritty.com/
 yelpLink: https://www.yelp.com/biz/nitty-gritty-madison-madison
+position:
+  lat: 43.071810
+  lng: -89.395610
 deals:
   - description: Trivia Night!
     time: starts at 8pm

@@ -4,4 +4,7 @@ displayAddress: 119 W Main St, Madison,WI 53703
 phoneNumber: 608-256-2263
 website: http://thenewparadiselounge.com/
 yelpLink: https://www.yelp.com/biz/the-paradise-lounge-madison
+position:
+  lat: 43.072400
+  lng: -89.384670
 deals:

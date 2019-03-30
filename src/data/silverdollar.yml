@@ -4,4 +4,7 @@ displayAddress: 117 W Mifflin St, Madison,WI 53703
 phoneNumber: 608-255-7548
 website:
 yelpLink: https://www.yelp.com/biz/silver-dollar-tavern-madison
+position:
+  lat: 43.07418
+  lng: -89.38679
 deals:

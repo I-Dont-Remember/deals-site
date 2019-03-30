@@ -4,4 +4,7 @@ displayAddress: 319 W Gorham St, Madison,WI 53703
 phoneNumber: 608-512-0501
 website: https://www.chasersbarandgrille.com/
 yelpLink: https://www.yelp.com/biz/chasers-bar-and-grille-madison-2
+position:
+  lat: 43.074230
+  lng: -89.391950
 deals:

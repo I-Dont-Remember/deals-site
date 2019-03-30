@@ -4,6 +4,9 @@ displayAddress: 554 W Main St, Madison, WI 53703
 phoneNumber: 608-256-6928
 website: http://www.echotapmadison.com/
 yelpLink: https://www.yelp.com/biz/echo-tap-and-grill-madison
+position:
+  lat: 43.068330
+  lng: -89.391490
 deals:
   - description: Trivia Night
     time: (Th 9pm, Sun 8pm)

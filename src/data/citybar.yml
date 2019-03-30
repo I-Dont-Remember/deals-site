@@ -4,6 +4,9 @@ displayAddress: 636 State St, Madison,WI 53703
 phoneNumber: 608-250-2489
 website: http://www.citybarmadison.com/
 yelpLink: https://www.yelp.com/biz/city-bar-madison
+position:
+  lat: 43.075160
+  lng: -89.396180
 deals:
   - description: Trivia Night, $50 gift card prize
     time: starts 8:30pm

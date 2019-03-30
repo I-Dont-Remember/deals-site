@@ -4,6 +4,9 @@ displayAddress: 602 University Ave, Madison,WI 53703
 phoneNumber: 608-256-5204
 website: http://wandosbar.com/
 yelpLink: https://www.yelp.com/biz/wandos-madison
+position:
+  lat: 43.073439
+  lng: -89.395993
 deals:
   - description: $2.50 Domestic Taps
     days: 

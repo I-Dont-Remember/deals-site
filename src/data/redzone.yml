@@ -4,4 +4,7 @@ displayAddress: 1212 Regent St, Madison,WI 53715
 phoneNumber: 608-251-6766
 website: https://www.theredzonemadison.com/
 yelpLink: https://www.yelp.com/biz/the-red-zone-madison-madison
+position:
+  lat: 43.067962
+  lng: -89.406301
 deals:

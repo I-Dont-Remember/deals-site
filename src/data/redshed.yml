@@ -4,4 +4,7 @@ displayAddress: 406 N Frances St, Madison,WI 53703
 phoneNumber: 608-256-2214
 website:
 yelpLink: https://www.yelp.com/biz/red-shed-tavern-madison
+position:
+  lat: 43.073578
+  lng: -89.396107
 deals:

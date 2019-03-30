@@ -4,4 +4,7 @@ displayAddress: 204 State St, Madison,WI 53703
 phoneNumber: 608-257-5250
 website:
 yelpLink: https://www.yelp.com/biz/pauls-club-madison
+position:
+  lat: 43.075036
+  lng: -89.388292
 deals:

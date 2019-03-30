@@ -4,4 +4,7 @@ displayAddress: 115 State St, Madison,WI 53703
 phoneNumber: 608-230-7999
 website: http://dannyspubmadison.com/
 yelpLink: https://www.yelp.com/biz/buck-and-badger-madison
+position:
+  lat: 43.074500
+  lng: -89.387320
 deals:

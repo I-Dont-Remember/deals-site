@@ -4,6 +4,9 @@ displayAddress: 1313 Regent Street, Madison,WI 53715
 phoneNumber: 608-250-8989
 website: http://luckys1313.com/
 yelpLink: https://www.yelp.com/biz/luckys-1313-brew-pub-madison-2
+position:
+  lat: 43.067390
+  lng: -89.408170
 deals:
   - description: Lucky's hour, 2-4-1 rail mixers
     time: 11pm-1am

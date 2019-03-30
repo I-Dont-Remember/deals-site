@@ -4,6 +4,9 @@ displayAddress: 416 S. Park St, Madison,WI 53715
 phoneNumber: 608-255-7777
 website:
 yelpLink: https://www.yelp.com/biz/the-mason-lounge-madison
+position:
+  lat: 43.062810
+  lng: -89.401200
 deals:
   - description: Jazz Night
     time: starts 9pm

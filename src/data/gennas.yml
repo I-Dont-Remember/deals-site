@@ -4,4 +4,7 @@ displayAddress: 105 W Main St, Madison,WI 53703
 phoneNumber: 608-255-4770
 website: http://www.gennaslounge.com/
 yelpLink: https://www.yelp.com/biz/gennas-lounge-madison
+position:
+  lat: 43.072720
+  lng: -89.384410
 deals:
