@@ -73,7 +73,7 @@ class MapPage extends React.Component{
     render() {
         return (
             <Layout page={2}>
-              <Header title={"Map"} noButton />
+              <Header noButton />
                 <Map
                     google={this.props.google}
                     initialCenter={this.props.center}

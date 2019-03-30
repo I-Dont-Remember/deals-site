@@ -49,6 +49,7 @@ class BottomNav extends React.Component {
             style={styles.nav}
             value={this.props.page}
             onChange={handleChange}
+            showLabels
         >
             <BottomNavigationAction label="Deals" icon={<MonetizationOnOutlined />} />
             <BottomNavigationAction label="Bars" icon={<LocalBarOutlined />} />

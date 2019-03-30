@@ -37,7 +37,7 @@ export default ({ data }) => {
 
   return (
     <Layout page={4}>
-      <Header title={"Info"} noButton />
+      <Header noButton />
       <div style={styles.div}>
       <Grid
         container
