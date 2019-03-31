@@ -20,9 +20,13 @@ const styles = {
       textAlign: "center"
   },
   button: {
-    marginTop: "10%",
+    marginTop: "5%",
     fontSize: "24px",
-    padding: "12px 32px"
+    padding: "6px 32px",
+    marginBottom: "8%"
+  },
+  gridItem: {
+      padding: "4px"
   }
 }
 
@@ -97,6 +101,7 @@ class RandomPage extends React.Component {
                 </Grid>
                 <Grid
                     item
+                    style={styles.gridItem}
                 >
                     <Button label="random" style={styles.button} onClick={this.handleClick} variant="contained" color="primary">
                         Randomize!
