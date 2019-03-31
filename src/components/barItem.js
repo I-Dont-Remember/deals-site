@@ -9,10 +9,12 @@ import Deals from "../components/deals"
 
 const styles = {
   card: {
+    width: "100%",
+    maxWidth: "300px",
     margin: `8px 0px`,
   },
   content: {
-      padding: "12px"
+      padding: "5px"
   }
 }
 
@@ -30,9 +32,13 @@ class BarItem extends React.Component {
     return (
       <Card style={styles.card}>
         <CardActionArea onClick={this.toBarPage}>
-        <CardHeader
+        {/* <CardHeader
             title={bar.name}
-        />
+        /> */}
+        <CardContent>
+            <h3>{bar.name}</h3>
+            <p style={{marginBottom: "5px"}}>{"Distance: unknown"}</p>
+        </CardContent>
         </CardActionArea>
       </Card>
     )

@@ -51,7 +51,7 @@ class BarList extends React.Component {
     render() {
         const bars = this.props.bars;
         return (
-            <List>
+            <List style={{ width: "90%"}}>
                 {
                     bars.map(b => {
                         return (<BarItem
