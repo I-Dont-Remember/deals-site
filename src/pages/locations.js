@@ -104,9 +104,26 @@ function getValidBars(text, bars) {
     });
 }
 
+function rad(x) {
+    return x*Math.PI/ 180;
+}
+
+function calulateDistance(barPosition, userPosition) {
+    const R = 6378137;
+    const dLat = rad(barPosition.lat - userPosition.lat);
+    const dLong = rad(barPosition.lng - userPosition.lng);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(rad(barPosition.lat)) * Math.cos(rad(userPosition.lat)) *
+    Math.sin(dLong / 2) * Math.sin(dLong / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c;
+    return Math.floor(d); // returns the distance in meter
+}
+
 class LocationsPage extends React.Component {
     state = {
-        value: ""
+        value: "",
+        center: undefined
     }
 
     inputOnChange = (event) => {
@@ -120,9 +137,40 @@ class LocationsPage extends React.Component {
         })
     }
 
+    updatePosition = (position) => {
+        const lat = position.coords.latitude
+        const lng = position.coords.longitude
+        console.log("lat " + lat + " long " + lng);
+        this.setState({
+            center: {
+                lat: lat,
+                lng: lng
+            }
+        })
+    }
+
+    componentDidMount = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.updatePosition, 
+                (error) => {
+                    console.log(error);
+            });
+        } else {
+            console.log("no geolocation");
+        }
+      }
+
     render() {
         const bars = shimBars(this.props.data.allDataYaml.edges);
-        const validBars = getValidBars(this.state.value, bars);
+        let validBars = getValidBars(this.state.value, bars);
+        validBars.forEach(b => {
+            if (this.state.center) {
+                b.distance = calulateDistance(b.position, this.state.center);
+            } else {
+                b.distance = "unknown"
+            }
+        })
+
         console.log(validBars.length)
         return (
         <Layout page={1}>
@@ -190,6 +238,10 @@ export const query = graphql`
             phoneNumber
             website
             yelpLink
+            position {
+                lat
+                lng
+            }
         }
         }
     }
