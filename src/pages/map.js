@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper"
 import Button from "@material-ui/core/Button"
 import PlaceOutlined from "@material-ui/icons/PlaceOutlined"
 
-import {Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
+import {Map, Marker, InfoWindow, Circle, GoogleApiWrapper } from 'google-maps-react'
 import { StaticQuery } from "gatsby"
 
 const styles = {
@@ -45,6 +45,11 @@ class MapPage extends React.Component{
         showingInfoWindow: false,
         activeMarker: {},
         selectedPlace: {},
+        // centered on Sellery Hall
+        center: {
+            lat: 43.071510,
+            lng: -89.399090
+        }
     };
 
     static defaultProps = {
@@ -55,6 +60,29 @@ class MapPage extends React.Component{
         },
         zoom: 15
       };
+
+    updatePosition = (position) => {
+        const lat = position.coords.latitude
+        const lng = position.coords.longitude
+        console.log("lat " + lat + " long " + lng);
+        this.setState({
+            center: {
+                lat: lat,
+                lng: lng
+            }
+        })
+    }
+
+    componentDidMount = () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.updatePosition, 
+                (error) => {
+                    console.log(error);
+            });
+        } else {
+            console.log("no geolocation");
+        }
+      }
 
       onMarkerClick = (props, marker, e) => {
         console.log(props);
@@ -107,14 +135,27 @@ class MapPage extends React.Component{
 
                 return (
             <Layout page={2}>
-              <Header noButton />
+            <Header noButton />
                 <Map
                     google={this.props.google}
                     initialCenter={this.props.center}
                     zoom={this.props.zoom}
                     onClick={this.onMapClicked}
                     style={styles.map}
+                    center={this.state.center}
                 >
+                    <Circle
+                        radius={40}
+                        center={this.state.center}
+                        onMouseover={() => console.log('mouseover')}
+                        onClick={() => console.log('click')}
+                        onMouseout={() => console.log('mouseout')}
+                        strokeColor='transparent'
+                        strokeOpacity={0}
+                        strokeWeight={5}
+                        fillColor='#0099ff'
+                        fillOpacity={0.4}
+                    />
                     {bars.map(b => (
                         <Marker
                         key={b.name}
@@ -133,11 +174,11 @@ class MapPage extends React.Component{
                         </div>
                     </InfoWindow>
                 </Map>
-              <BottomNav page={2} />
+            <BottomNav page={2} />
             </Layout>
                 )}}
             </StaticQuery>
-          )
+        )
     }
 } 
 
