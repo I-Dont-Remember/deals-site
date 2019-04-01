@@ -14,7 +14,7 @@ import Input from "@material-ui/core/Input"
 import InputAdornment from "@material-ui/core/InputAdornment"
 import IconButton from "@material-ui/core/IconButton"
 import Close from "@material-ui/icons/Close"
-
+import Switch from '@material-ui/core/Switch'
 
 const styles = {
   div: {
@@ -65,6 +65,9 @@ const styles = {
   input: {
     width: "95%",
     maxWidth: "300px",
+  },
+  toggle: {
+    marginTop: "15px"
   }
 }
 
@@ -116,14 +119,17 @@ function calulateDistance(barPosition, userPosition) {
     Math.cos(rad(barPosition.lat)) * Math.cos(rad(userPosition.lat)) *
     Math.sin(dLong / 2) * Math.sin(dLong / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c;
-    return Math.floor(d); // returns the distance in meter
+    var meters = R * c;
+    
+    return (meters/ 1609.344).toPrecision(2);
 }
 
 class LocationsPage extends React.Component {
     state = {
         value: "",
-        center: undefined
+        distance: true,
+        center: undefined,
+        noLocation: true
     }
 
     inputOnChange = (event) => {
@@ -145,7 +151,8 @@ class LocationsPage extends React.Component {
             center: {
                 lat: lat,
                 lng: lng
-            }
+            },
+            noLocation: false
         })
     }
 
@@ -156,9 +163,18 @@ class LocationsPage extends React.Component {
                     console.log(error);
             });
         } else {
+            this.setState({
+                noLocation: true
+            });
             console.log("no geolocation");
         }
       }
+
+    handleSwitchChange = (event, value) => {
+        this.setState({
+            distance: value
+        })
+    }
 
     render() {
         const bars = shimBars(this.props.data.allDataYaml.edges);
@@ -171,7 +187,13 @@ class LocationsPage extends React.Component {
             }
         })
 
-        console.log(validBars.length)
+        // make sure they want distance and also we have distance ints
+        if (this.state.distance && validBars[0].distance != "unknown") {
+            validBars.sort(function(a,b) {
+                return a.distance - b.distance;
+            })
+        }
+
         return (
         <Layout page={1}>
             <Header title={"Bars"} noButton />
@@ -202,21 +224,39 @@ class LocationsPage extends React.Component {
                         }
                     />
                 </Paper>
-
-                {(validBars && validBars.length !== 0)              
-                    ? <BarList
-                        bars={validBars}
-                    />
-                    :(
-                    <div style={styles.noMatchesDiv}>
-                        <Img
-                        style={styles.image}
-                        fixed={this.props.data.file.childImageSharp.fixed}
+                <Grid style={styles.toggle} item xs={12}>
+                    <Grid container justify="center">
+                        <Grid item>
+                            <h5>A-Z</h5>
+                        </Grid>
+                        <Grid item>
+                            <Switch disabled={this.state.noLocation}
+                                checked={this.state.distance}
+                                onChange={this.handleSwitchChange}
+                                color="primary"
+                            />
+                        </Grid>
+                        <Grid item>
+                            <h5>Distance</h5>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item xs={12}>
+                    {(validBars && validBars.length !== 0)              
+                        ? <BarList
+                            bars={validBars}
                         />
-                        <h5>No matches found</h5>
-                    </div>
-                    )
-                }
+                        :(
+                        <div style={styles.noMatchesDiv}>
+                            <Img
+                            style={styles.image}
+                            fixed={this.props.data.file.childImageSharp.fixed}
+                            />
+                            <h5>No matches found</h5>
+                        </div>
+                        )
+                    }
+                </Grid>
             </Grid>
             </div>
             <BottomNav page={1} />

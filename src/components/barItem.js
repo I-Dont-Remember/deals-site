@@ -37,7 +37,7 @@ class BarItem extends React.Component {
         /> */}
         <CardContent>
             <h3>{bar.name}</h3>
-            <p style={{marginBottom: "5px"}}>Distance: {bar.distance} m</p>
+            <p style={{marginBottom: "5px"}}>Distance: {bar.distance} mi</p>
         </CardContent>
         </CardActionArea>
       </Card>
