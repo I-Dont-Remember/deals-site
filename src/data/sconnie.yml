@@ -71,6 +71,12 @@ deals:
     types:
       - Drinks
 
+  - description: $10 All You Can Eat Spaghetti
+    days:
+      - Sat
+    types:
+      - Food
+
   - description: $5 High Life pitchers
     days:
       - Sat
