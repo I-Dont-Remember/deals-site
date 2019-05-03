@@ -51,12 +51,16 @@ export default ({ data }) => {
             come back soon!
         </p>
         <br />
-        <h4>Are we missing deals? Thought of a cool feature we need? Contact us with the form below.</h4>
+        <h4>Are we missing deals? Thought of a cool feature we need?
+        Contact us with the form below or email us:</h4>
+        <a href="mailto://support@getdealsontap.com">support@getdealsontap.com</a>
         <form 
             style={styles.form}
             action="https://formspree.io/kpquinn2@wisc.edu"
             method="POST"
         >
+        <br />
+        <br />
         <Paper>
         <TextField
             name="feedback"
