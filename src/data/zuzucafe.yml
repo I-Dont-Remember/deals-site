@@ -1,0 +1,61 @@
+name: ZuZu Cafe & Market
+campusSlug: uw-madison
+displayAddress: 1336 Drake St, Madison,WI 53715
+phoneNumber: 608-260-9898
+website: https://www.facebook.com/ZuZu.Cafe.in.Madison
+yelpLink: https://www.yelp.com/biz/zuzu-cafe-and-market-madison
+position:
+  lat: 43.062290
+  lng: -89.408770
+deals:
+  - description: Gyro special, $2.99
+    time: 4pm - close
+    days: 
+      - Thu
+    types:
+      - Food
+
+  - description: Microbrews $4
+    time: 4-6pm
+    days:
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    types:
+      - Drinks
+
+  - description: Domestics for $2.5
+    time: 4-6pm
+    days:
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    types:
+      - Drinks
+
+  - description: Bucket of Beer $11.50
+    time: 4-6pm
+    days:
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    types:
+      - Drinks
+
+
+  - description: Gyros basket $4.5
+    time: 4-6pm
+    days:
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    types:
+      - Food
